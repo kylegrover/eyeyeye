@@ -83,14 +83,18 @@ A ≤ 27. <a href="tools/periodic_bound.py">Count the symbols</a>.</p>
     tested.</td></tr>
   <tr><td>Dihedral shuffles: rotate or reflect the deck</td><td>None of the 4,096 ways to choose
     rotation or reflection for the twelve maps fits. Eleven of the twelve are not their own
-    inverse.</td></tr>
+    inverse. Lymm's wiki has the same exclusion.</td></tr>
+  <tr><td>Homophonic substitution: several symbols per letter, each symbol always the same
+    letter</td><td>Copies of the same text must map each symbol to another symbol of the same letter.
+    Merging the copy maps puts all 82 symbols that occur in copies into one group, so they would
+    all be one letter. Holds with any one pair dropped.</td></tr>
 </table>
 
 <p id="affine">The affine exclusion is where R and W part. Using only repeat-supported cells, all
-1,681 multiplier pairs tested fit every map: R alone says nothing about affine shuffles.
+1,681 multiplier pairs of the subgroup tested (C83:C41, half the affine group) fit every map: R alone says nothing about affine shuffles.
 allthemalware's <a href="https://github.com/allthemalware/noiteyes">noiteyes</a> reports the
-affine model as inconclusive once the windows are trimmed; the difference from the exclusion
-here is this assumption. The <a href="isomorphs.html#support">link counts</a> show how much of
+affine model as inconclusive once the windows are trimmed; FrobtheBuilder excludes it on full
+windows. The difference is this assumption. The <a href="isomorphs.html#support">link counts</a> show how much of
 the evidence sits on cells that only W uses.</p>
 
 <p>The header as a key also fails, on a third assumption: all nine messages agree at cells 1 and 2
@@ -117,8 +121,8 @@ shared openings split and the isomorphs at a shift of one.
     message</td><td>Unrelated messages hold the same symbol at the same cell 11 times in 1,100.
     Letters of any language coincide 3–7% of the time. At 3%, eleven or fewer has probability
     9 × 10<sup>−6</sup>.</td></tr>
-  <tr><td>Homophonic substitution: several symbols per letter</td><td>A fixed rule for choosing
-    among them puts the messages in depth. A random choice cannot repeat 24 symbols exactly
+  <tr><td>Homophonic substitution, without W</td><td>A fixed rule for choosing among the symbols
+    of a letter puts the messages in depth. A random choice cannot repeat 24 symbols exactly
     across E1, W1 and E2.</td></tr>
 </table>
 
@@ -147,9 +151,9 @@ The clock, Lua and card-trick searches each recovered 8 of 8 planted keys first.
     glibc generators</td><td>183 billion keys in ten runs: seeds 0–999,999 and the clock
     window</td><td>31–44</td></tr>
   <tr><td>Noita's own random generator</td><td>2.2 million keys: world seeds 0 and 1, positions
-    −300 to 300 in both coordinates</td><td>32</td></tr>
+    −300 to 300 in both coordinates</td><td>30</td></tr>
   <tr><td>Python <code>random</code></td><td>6 million keys: seeds 0–999,999, six
-    variants</td><td>33</td></tr>
+    variants</td><td>30</td></tr>
   <tr><td>Card tricks as the class shuffles: cuts, faros, riffles, pile deals</td><td>576
     settings, 3.36 billion partial keys</td><td>24</td></tr>
 </table>
