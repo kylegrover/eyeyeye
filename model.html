@@ -4,15 +4,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>A class-shuffle model: Noita eye messages</title>
 <link rel="icon" href="favicon.ico">
-<link rel="stylesheet" href="style.css?v=66355e6f">
+<link rel="stylesheet" href="style.css?v=687f08e0">
 
 <main>
-<nav><a href="index.html">Research</a><a href="isomorphs.html">Isomorphs</a><a href="ruled-out.html">Exclusions &amp; searches</a><a href="model.html">Model</a><a href="plaintext.html">Plaintext</a><a href="messages.html">Basics &amp; data</a><a href="sources.html">Sources &amp; tools</a></nav>
+<nav><a href="index.html">Research</a><a href="messages.html">Basics &amp; data</a><a href="isomorphs.html">Isomorphs</a><a href="model.html">Model</a><a href="ruled-out.html">Exclusions &amp; searches</a><a href="plaintext.html">Plaintext</a><a href="sources.html">Sources &amp; tools</a></nav>
 
 <h1>A class-shuffle model</h1>
 
 <p>The mechanism that fits best so far. It produces shared openings, isomorphs, and messages that
-agree again after differing. No key for it has been found.</p>
+agree again after differing. No key for it has been found. Here a letter means any character of
+the unknown text, including a digit or a space, and the alphabet is the set of them.</p>
 
 <h2>Read a position, then shuffle</h2>
 
@@ -24,22 +25,66 @@ agree again after differing. No key for it has been found.</p>
     shuffle.</li>
 </ol>
 
+<p>The key is the starting deck, the position of each letter, the class of each letter and one
+shuffle per class. Each message starts again from the starting deck, so messages that begin
+with the same text begin with the same symbols.</p>
+
+<h2 id="toy">Nine cards, five letters, two shuffles</h2>
+
+<p>A small key of the same kind: nine cards, the letters A, B, N, O and S, and two classes.
+Shuffle 1 follows A and O; shuffle 2 follows B, N and S. A shuffle line lists, for each position,
+the position its new card comes from.</p>
+
+<pre><span class="dim">position              </span>0 1 2 3 4 5 6 7 8
+<span class="dim">starting deck         </span>1 2 8 4 0 3 5 6 7
+<span class="dim">shuffle 1 (A, O)      </span>2 3 5 0 6 8 4 1 7
+<span class="dim">shuffle 2 (B, N, S)   </span>6 2 8 0 5 3 7 4 1
+<span class="dim">read positions        </span>A 0  B 1  N 2  O 3  S 4</pre>
+
+<p>To encipher BANANA: B reads position 1 of the starting deck, which holds card 2, so the first
+symbol is 2. B is in the second class, so shuffle 2 is applied, and the deck becomes
+5 8 7 1 3 4 6 0 2. A reads position 0, card 5. Carrying on gives 2 5 4 3 5 2. The same word after
+one extra letter, SBANANA, starts from a deck that has been shuffled once more:</p>
+
+<pre><span class="dim">              B  A  N  A  N  A</span>
+<span class="dim">BANANA   </span>     <b>2</b>  <b>5</b>  4  3  <b>5</b>  <b>2</b>
+<span class="dim">           S  B  A  N  A  N  A</span>
+<span class="dim">SBANANA  </span>  0  <b>8</b>  <b>6</b>  1  4  <b>6</b>  <b>8</b></pre>
+
+<p>The two rows share no symbol in the same place, and both repeat in the same places. That is an
+isomorph at a shift of 1, made by one text met in two deck states. Changing one letter for
+another of the same class shows the second effect:</p>
+
+<pre><span class="dim">           B  A  N  A  N  A</span>
+<span class="dim">BANANA   </span>  2  <mark>5</mark>  4  3  5  2
+<span class="dim">           B  O  N  A  N  A</span>
+<span class="dim">BONANA   </span>  2  <mark>1</mark>  4  3  5  2</pre>
+
+<p>A and O read different positions, so the second symbol differs. They are in one class, so the
+deck afterwards is the same and the rest agrees again.</p>
+
 <p>This is a shared-shuffle version of extended group autokey. See
 <a href="https://github.com/Lymm37/eye-messages/wiki/Extended-Group-Autokey-(XGAK)">Lymm's
 formalization</a> and <a href="https://frobthebuilder.github.io/eye-cipher-field-notes/">FrobtheBuilder's
 field notes</a>. The key changes with the plaintext, as in an <i>autokey</i> cipher; here the
-changes are permutations. The working variant has no extra movement of the card just read.</p>
+changes are permutations. The working variant has no extra movement of the card just read.
+"Class shuffle" is this site's name for it.</p>
 
 <h2 id="assumptions">What is assumed</h2>
 
-<p>Two levels of plaintext correspondence are used on these pages:</p>
+<p>The plaintext is unknown, so every statement that two stretches hold the same text is an
+assumption. An <a href="isomorphs.html">isomorph</a> is a pair of stretches with the same
+pattern of repeated symbols; its two rows are called copies. Two levels of plaintext
+correspondence are used on these pages:</p>
 <ul>
   <li>R: at repeat-supported positions of a selected isomorph, corresponding cells in the two
     passages hold the same plaintext letter. It is a claim across copies, not just within each row.</li>
   <li>W: corresponding cells throughout the selected span hold the same plaintext, including
     positions whose symbols occur only once there.</li>
 </ul>
-<p>W implies R. Both are hypotheses about the <a href="isomorphs.html">listed pairs</a>, and W
+<p>A position is repeat-supported when its symbol occurs more than once in the row. Matching
+repeats in two rows are unlikely unless the text matches there; a symbol that occurs once fits
+any text. W implies R. Both are hypotheses about the <a href="isomorphs.html">listed pairs</a>, and W
 fails for at least one of them: an isomorph can span a short field where the text differs
 (<a href="plaintext.html#sheet">example</a>). The model also assumes one starting deck for all
 messages, fixed read positions, and the same letter-to-shuffle rule throughout. Cell 0 is left
@@ -57,7 +102,8 @@ c<sub>t</sub> = D<sub>t</sub>[ r(a<sub>t</sub>) ]                  read
 D<sub>t+1</sub>[i] = D<sub>t</sub>[ P<sub>κ(a<sub>t</sub>)</sub>(i) ]          shuffle
 </pre>
 
-<p>The key is (D<sub>0</sub>, r, κ, P<sub>1</sub> … P<sub>K</sub>). With one shuffle, put
+<p>K is the number of classes, and so the number of shuffles.
+The key is (D<sub>0</sub>, r, κ, P<sub>1</sub> … P<sub>K</sub>). With one shuffle, put
 Q = D<sub>0</sub> P<sub>1</sub> D<sub>0</sub><sup>−1</sup>: this is the shuffle expressed on
 symbols rather than positions. Equal letters at a shift of <i>d</i> then give a symbol map
 Q<sup>d</sup>, independent of the start of the passage. The
@@ -69,12 +115,17 @@ Q<sup>d</sup>, independent of the start of the passage. The
 <span class="dim">E1</span> 49  1 <mark>80</mark> <mark>82</mark> <mark>40</mark> <mark>63</mark> 81 21 19  0 <mark>40</mark> <mark>51</mark> <mark>65</mark> <mark>26</mark> 14 21 70 47 44 48 42 19 48 13 47 19
 <span class="dim">W1</span> 49  1 <mark>29</mark> <mark>11</mark> <mark>30</mark> <mark>52</mark> 81 21 19  0 <mark>25</mark> <mark>26</mark> <mark>54</mark> <mark>20</mark> 14 21 70 47 44 48 42 19 48 13 47 19</pre>
 
-<p>E1 and W1 differ at cells 25–28, match at 29–32, differ at 33–36, then match again. In this
+<p>Yellow marks the cells where the two messages differ.
+E1 and W1 differ at cells 25–28, match at 29–32, differ at 33–36, then match again. In this
 model, replacing a letter with another of the same class changes its output but leaves the next
 deck unchanged. Equal output does not prove equal decks: two decks can agree at the positions
 read next, and two different shuffles can cancel.</p>
 
 <h2 id="doubles">A double is a property of a letter pair</h2>
+
+<p>A double is a symbol followed at once by the same symbol. The eyes have none. The card read
+for a letter moves when the deck is shuffled, and the next letter reads it again only if the
+shuffle carried it to that letter's position:</p>
 
 <pre class="formal">
 a followed by b produces equal symbols ⇔ P<sub>κ(a)</sub>(r(b)) = r(a)
@@ -109,19 +160,22 @@ without lifts. The alphabet, the letter classes, and why the deck has 83 cards a
 
 <h2 id="checking">Rejecting a guess is easier than verifying one</h2>
 
-<p>A <i>crib</i> is a guessed stretch of plaintext. Folding closure tracks the possible positions
+<p>A <i>crib</i> is a guessed stretch of plaintext, and a fill is a guess for the whole text of
+all nine messages. The closure check tracks the possible positions
 of each card through the guessed text: equal read letters must use the same position, and each
 shuffle must be a one-to-one map. A contradiction rejects that guess under the specified model.
 No contradiction does not guarantee that a complete 83-card key exists.</p>
 
 <table>
   <tr><th>Full-length wrong fills</th><th>Passed closure</th></tr>
-  <tr><td>One shuffle allowed per letter</td><td>3 / 120</td></tr>
+  <tr><td>Every letter may have its own shuffle</td><td>3 / 120</td></tr>
   <tr><td>Vowel / consonant / digit classes</td><td>0 / 120</td></tr>
   <tr><td>Letter / digit / space classes</td><td>0 / 120</td></tr>
 </table>
 
-<p>The fills obey the <a href="plaintext.html#sheet">constraint sheet</a> and draw words from
+<p>The rows are three assumptions about the classes; the first is the loosest. The fills obey
+the <a href="plaintext.html#sheet">constraint sheet</a>, which lists the cells that must hold
+equal letters, and draw words from
 English game text, common English and common Finnish; half use number fields. The broader
 <a href="evidence/fill-calibration-v1.json">fill-calibration results</a> use the earlier pairwise
 checks and show substantial variation between text sources.</p>
@@ -132,16 +186,33 @@ way. <a href="plaintext.html#size">How much text a check needs</a>.</p>
 
 <h2 id="terms">Terms</h2>
 <table>
+  <tr><td>alphabet</td><td>the characters of the unknown text; its size is written A</td></tr>
   <tr><td>autokey</td><td>a cipher whose changing key depends on the plaintext or ciphertext</td></tr>
   <tr><td>affine</td><td>a shuffle sending the card at position x to ax + b, modulo the deck size</td></tr>
+  <tr><td>body</td><td>a message without its cell 0</td></tr>
+  <tr><td>cell</td><td>one triangle of three eyes, holding one symbol; numbered from 0 in each message</td></tr>
+  <tr><td>class</td><td>a set of letters that are followed by the same shuffle</td></tr>
   <tr><td>commute</td><td>two maps give the same result in either order</td></tr>
+  <tr><td>copy, copy map</td><td>one row of an isomorph; the rule taking each symbol of one row to
+    the symbol at the same place in the other</td></tr>
   <tr><td>crib</td><td>a guessed piece of plaintext used to test or recover a key</td></tr>
+  <tr><td>deck</td><td>the changing state of the cipher: the 83 symbols in some order</td></tr>
+  <tr><td>double</td><td>a symbol followed at once by the same symbol</td></tr>
+  <tr><td>group</td><td>three messages that open alike: E1, W1, E2; W2, E3, W3; E4, W4, E5</td></tr>
   <tr><td>homophonic</td><td>a substitution with several symbols for one letter</td></tr>
   <tr><td>in depth</td><td>messages enciphered with the same substitution at each position</td></tr>
   <tr><td>isomorph</td><td>two stretches with the same pattern of repeated symbols</td></tr>
+  <tr><td>K</td><td>the number of classes, and of shuffles</td></tr>
   <tr><td>lift</td><td>an extra move of the card just read, besides the class shuffle</td></tr>
+  <tr><td>link</td><td>one symbol paired with another by a copy map</td></tr>
   <tr><td>permutation</td><td>a one-to-one rearrangement; a shuffle here</td></tr>
+  <tr><td>R, W</td><td>the two strengths of "these copies are the same text"
+    (<a href="#assumptions">above</a>)</td></tr>
+  <tr><td>read position</td><td>the place in the deck where a letter's card is taken from</td></tr>
+  <tr><td>repeat-supported</td><td>seen at two or more cells of one isomorph</td></tr>
+  <tr><td>seed</td><td>the number a random number generator starts from; one seed always gives the same key</td></tr>
   <tr><td>shift</td><td>the difference between the starting cell numbers of two copies</td></tr>
+  <tr><td>symbol</td><td>a number from 0 to 82, read from three eyes</td></tr>
 </table>
 </main>
 <script src="eyes-bg.js?v=bd0eac51" data-mode="random"></script>

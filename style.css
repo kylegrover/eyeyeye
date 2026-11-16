@@ -19,4 +19,5 @@ pre .dim { color: #999; }                         /* labels, cell numbers, patte
 .glyphs svg { image-rendering: pixelated; shape-rendering: crispEdges; }
 .glyphs path { fill: #2b2a26; }
 .glyphs text { font: 5px ui-monospace, Consolas, monospace; fill: #b3400a; text-anchor: middle; }
+.glyphs text.digits { fill: #999; }  /* the three eye digits of a cell, in reading order */
 .formal { background: #faf8f2; border-left: 3px solid #e2ddd0; padding: .5rem .75rem; }

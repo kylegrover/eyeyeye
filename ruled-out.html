@@ -4,16 +4,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Exclusions and searches: Noita eye messages</title>
 <link rel="icon" href="favicon.ico">
-<link rel="stylesheet" href="style.css?v=66355e6f">
+<link rel="stylesheet" href="style.css?v=687f08e0">
 
 <main>
-<nav><a href="index.html">Research</a><a href="isomorphs.html">Isomorphs</a><a href="ruled-out.html">Exclusions &amp; searches</a><a href="model.html">Model</a><a href="plaintext.html">Plaintext</a><a href="messages.html">Basics &amp; data</a><a href="sources.html">Sources &amp; tools</a></nav>
+<nav><a href="index.html">Research</a><a href="messages.html">Basics &amp; data</a><a href="isomorphs.html">Isomorphs</a><a href="model.html">Model</a><a href="ruled-out.html">Exclusions &amp; searches</a><a href="plaintext.html">Plaintext</a><a href="sources.html">Sources &amp; tools</a></nav>
 
 <h1>Exclusions &amp; searches</h1>
 
-<p>Grouped by what each argument assumes about the plaintext: nothing, R, or W.
-<a href="model.html#assumptions">R</a> says the repeat-supported cells of an isomorph hold equal
-letters; W says every aligned cell does. A is the number of plaintext letters.</p>
+<p>Ciphers that cannot have produced the eyes, and keys that were tried. Most rows are variations
+on the <a href="model.html">deck picture</a>: a deck of 83 cards, a letter reads the card at its
+position, and the deck then changes. The exclusions are grouped by what each argument assumes
+about the plaintext: nothing, R, or W. An <a href="isomorphs.html">isomorph</a> is a pair of
+stretches with the same pattern of repeated symbols.
+<a href="model.html#assumptions">R</a> says the two stretches hold equal letters at the cells
+whose symbols repeat; W says they do at every cell. A is the size of the alphabet, the number of
+different characters in the plaintext.</p>
 
 <h2 id="free">From the ciphertext alone</h2>
 
@@ -90,14 +95,20 @@ A ≤ 27. <a href="tools/periodic_bound.py">Count the symbols</a>.</p>
     all be one letter. Holds with any one pair dropped.</td></tr>
 </table>
 
+<p>A copy map is the rule that turns each symbol of one copy into the symbol at the same place in
+the other. The affine and dihedral rows test the <a href="isomorphs.html#twelve">twelve copy
+maps</a> with four or more repeats. Three of them, between E4, W4 and E5, come from one passage
+and are fitted first; the other nine are then tried one at a time.</p>
+
 <p id="affine">The affine exclusion is where R and W part. Using only repeat-supported cells, all
-1,681 multiplier pairs of the subgroup tested (C83:C41, half the affine group) fit every map: R alone says nothing about affine shuffles.
+1,681 multiplier pairs of the subgroup tested (C83:C41, the half of the affine group whose
+multipliers are squares) fit every map: R alone says nothing about affine shuffles.
 allthemalware's <a href="https://github.com/allthemalware/noiteyes">noiteyes</a> reports the
-affine model as inconclusive once the windows are trimmed; FrobtheBuilder excludes it on full
-windows. The difference is this assumption. The <a href="isomorphs.html#support">link counts</a> show how much of
+affine model as inconclusive once the ends of each isomorph are cut back; FrobtheBuilder excludes
+it on the full spans. The difference is this assumption. The <a href="isomorphs.html#support">link counts</a> show how much of
 the evidence sits on cells that only W uses.</p>
 
-<p>The header as a key also fails, on a third assumption: all nine messages agree at cells 1 and 2
+<p>Cell 0 as a key that sets up the deck also fails, on a third assumption: all nine messages agree at cells 1 and 2
 after nine different values of cell 0. If the shared openings are shared text, cell 0 does not
 set the deck.</p>
 
@@ -128,16 +139,24 @@ shared openings split and the isomorphs at a shift of one.
 
 <h2 id="searches">Key searches</h2>
 
+<p>A key for the <a href="model.html">class-shuffle model</a> is a starting deck and a few
+shuffles. If a program made them, it most likely seeded a random number generator and shuffled
+the numbers 0 to 82 several times. One seed gives one key, so every seed can be tried.</p>
+
 <p>The build of 15 July 2020 has no eyes; the 1.0 build of 15 October 2020 has them. The game's
 executable seeds C <code>rand</code> from the clock and shuffles with
-<code>std::random_shuffle</code>. The clock searches below try every second of that window as a
-seed, for each of a few thousand ways to turn shuffles into a class-shuffle key: alphabet order,
-letter classes, whether the deck or the shuffles are generated first. The first runs start a
-month earlier, on 15 June.</p>
+<code>std::random_shuffle</code>. MSVC and glibc are the Windows and Linux C libraries, whose
+<code>rand</code> differ; LuaJIT runs the game's Lua scripts and has its own generator. The clock
+searches below try every second of that window as a seed. Each seed is tried with a few thousand
+variants, the ways to turn the shuffles into a key: 25 or 26 letters and ten digits, with or
+without a space, one to three classes, the deck generated before or after the shuffles. The first runs
+start a month earlier, on 15 June.</p>
 
 <p>A candidate key decrypts each message until it reaches a symbol it cannot produce. The score
 is the total length decrypted, out of 918 (shared openings counted once). A true key scores 918.
-The clock, Lua and card-trick searches each recovered 8 of 8 planted keys first.</p>
+Each of the clock, Lua and card-trick searches was first run on eight sets of test messages
+enciphered with a known key, and found all eight keys. In the clock test runs the best wrong
+keys scored 33 to 36.</p>
 
 <table>
   <tr><th>Key construction</th><th>Searched</th><th>Best score</th></tr>
@@ -147,7 +166,8 @@ The clock, Lua and card-trick searches each recovered 8 of 8 planted keys first.
     seeds</td><td>34</td></tr>
   <tr><td>Both again, discarding the first 1 to 8 random numbers</td><td>16 runs, 5,472 variants ×
     8.0 or 10.6 million seeds each</td><td>30–38</td></tr>
-  <tr><td>Lua-style recipes: LuaJIT shuffles and character-table layouts, with LuaJIT, MSVC or
+  <tr><td>Lua-style recipes: the two usual Lua shuffle loops, and layouts where a character reads
+    its place in a table of the 83 characters the English game text uses, with LuaJIT, MSVC or
     glibc generators</td><td>183 billion keys in ten runs: seeds 0–999,999 and the clock
     window</td><td>31–44</td></tr>
   <tr><td>Noita's own random generator</td><td>2.2 million keys: world seeds 0 and 1, positions
@@ -162,8 +182,9 @@ The clock, Lua and card-trick searches each recovered 8 of 8 planted keys first.
 are not in that total. <a href="sources.html#search-records">Per-run records</a> give each run's
 seed range, variant count and best candidates.</p>
 
-<p>A key whose encoder re-draws on a would-be double still decrypts correctly up to its first
-such double, so most of those encoders are covered too: an estimated 75–80%. Outside
+<p>The encoder might have avoided doubles by shuffling again whenever one was about to appear.
+Such a key still decrypts correctly up to its first such place, so most of those encoders are
+covered too: an estimated 75–80%. Outside
 the searches: other seed sources (a world seed, a fixed constant above a million), other alphabet
 orders, <code>std::shuffle</code> with <code>mt19937</code>, hand-written shuffle loops, and any
 key built by hand.</p>

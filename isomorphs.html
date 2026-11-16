@@ -4,10 +4,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Isomorphs: Noita eye messages</title>
 <link rel="icon" href="favicon.ico">
-<link rel="stylesheet" href="style.css?v=66355e6f">
+<link rel="stylesheet" href="style.css?v=687f08e0">
 
 <main>
-<nav><a href="index.html">Research</a><a href="isomorphs.html">Isomorphs</a><a href="ruled-out.html">Exclusions &amp; searches</a><a href="model.html">Model</a><a href="plaintext.html">Plaintext</a><a href="messages.html">Basics &amp; data</a><a href="sources.html">Sources &amp; tools</a></nav>
+<nav><a href="index.html">Research</a><a href="messages.html">Basics &amp; data</a><a href="isomorphs.html">Isomorphs</a><a href="model.html">Model</a><a href="ruled-out.html">Exclusions &amp; searches</a><a href="plaintext.html">Plaintext</a><a href="sources.html">Sources &amp; tools</a></nav>
 
 <h1>Isomorphs</h1>
 
@@ -21,16 +21,30 @@ completely different.</p>
 <span class="dim">E2 35–53 </span> <b>40</b> <b>49</b> 78  3 16 56 19 47 <b>40</b> 80 <b> 6</b> 13 <b>64</b> 29 <b>49</b> <b>64</b> 63 <b> 6</b> <b>49</b>
 <span class="dim">           A  B  .  .  .  .  .  .  A  .  C  .  D  .  B  D  .  C  B</span></pre>
 
-<p>The E2 stretch begins five cells later: its shift is +5. That the two rows are the same text
-is a hypothesis, in two strengths. <a href="model.html#assumptions">R</a>: the letters are equal
-where symbols repeat (the lettered cells). W: they are equal at every cell of the span.</p>
+<p>Orange marks a symbol that occurs more than once in its row, and the letters under the rows
+name the repeats: both rows have the pattern A B . . . . . . A and so on. The E2 stretch begins
+five cells later: its shift is +5. The two stretches are called copies of each other.</p>
+
+<p>The usual explanation is that both rows are the same text, enciphered from two different
+states of the key (<a href="model.html#toy">the deck model</a> shows how that produces exactly
+this). Then the pair gives a <i>copy map</i>, a rule for turning a symbol of the first row into
+the symbol at the same place in the second: here 21 becomes 40, 19 becomes 49, 0 becomes 78. Each
+such pairing is a <i>link</i>. A link seen at two or more cells, like 21 → 40, is
+<i>repeat-supported</i>; a link seen once, like 0 → 78, rests on a single cell.</p>
+
+<p>That the two rows are the same text is a hypothesis, in two strengths.
+<a href="model.html#assumptions">R</a>: the letters are equal where symbols repeat (the lettered
+cells). W: they are equal at every cell of the span. R is the safer one: a pattern of repeats
+that lines up is hard to get by chance, while a cell whose symbol occurs once would look the
+same whether or not the text matched there.</p>
 
 <h2>The list</h2>
 
 <p>A pair is listed if it has at least three repeats, or two repeats over at least 12 cells. Pairs
 at the same shift in the same two messages are merged into one span. Stretches copied symbol for
 symbol, like the shared openings, are left out. That gives 30 pairs. Cell numbers count from 0 in
-each message.</p>
+each message. A shift of +5 means the second copy starts five cells later in its message than
+the first does in its own.</p>
 
 <table>
 <tr><th>First copy</th><th>Second copy</th><th>Shift</th><th>Length</th><th></th></tr>
@@ -66,14 +80,23 @@ each message.</p>
 <tr><td>W4 71–100</td><td>E5 69–98</td><td>-2</td><td>30</td><td></td></tr>
 </table>
 
-<p id="weak">W1 and E3 is the only pair that crosses from one group of three messages to another.
+<p id="twelve">Twelve of these are used for the tests of rotations, reflections and affine
+shuffles on the <a href="ruled-out.html#w">exclusions page</a>: the pairs with four or more
+repeats at a shift other than 0, counting the two halves of E4/E5 separately. All twelve lie
+inside the first or the last group of messages.</p>
+
+<p id="weak">Every other pair stays inside one of the
+<a href="messages.html#openings">three groups of messages</a>: E1, W1, E2; W2, E3, W3; E4, W4, E5.
+W1 and E3 is the only pair that crosses from one group to another.
 In shuffled copies of the messages, a match this strong somewhere between the groups turned up 3
 times in 46, so it may be chance. Nothing on this site depends on it.</p>
 
 <h2 id="one-shuffle">One fixed shuffle cannot fit these three copies</h2>
 
-<p>Assume fixed read positions, one shuffle after every letter, and the same starting deck for all
-messages, with cell 0 outside encryption. Express the shuffle on symbols as Q
+<p>In the <a href="model.html">deck model</a> each letter reads the card at its own position and
+the deck is then shuffled. Suppose there is only one shuffle, the same after every letter.
+Assume fixed read positions, the same starting deck for all
+messages, and cell 0 outside encryption. Express the shuffle on symbols as Q
 (<a href="model.html#notation">definition</a>). Equal letters at a shift of <i>d</i> must then
 be related by Q applied <i>d</i> times. Three isomorphs give three facts, each seen at two cells.</p>
 
@@ -121,7 +144,8 @@ B(A(58)) = B(25) = 54
 A(B(58)) = A(66) = 10            AB ≠ BA
 </pre>
 
-<p>Rotations of a ring <i>commute</i>: their order makes no difference. So A and B are not both
+<p>Two rules <i>commute</i> when applying them in either order gives the same result, and
+rotations of a ring do. So A and B are not both
 rotations of one ring, however the ring is labelled. That excludes any cipher whose copy maps
 must be rotations: cyclic deck walks and additive autokeys. Needs W:
 25 and 66 each appear only once in E3's passage. <a href="tools/commute.py">Check the maps</a>.</p>
@@ -164,8 +188,10 @@ which shuffles. Needs W: each mapping in the first half is seen once.</p>
   <tr><td>Repeat-supported, weak W1/E3 pair omitted</td><td>93</td><td>28</td></tr>
 </table>
 
-<p>The <a href="evidence/arrow-ledger-v1.json">link ledger</a> records the supporting cell numbers
-for every mapping. It contains 451 mappings across 31 spans, counting the E4/E5 halves separately:
+<p>The table counts links that pair two different symbols, once each however many pairs of
+copies show them. The last column is the largest set of symbols joined to each other by chains
+of links. The <a href="evidence/arrow-ledger-v1.json">link ledger</a> records the supporting cell
+numbers for every mapping. It contains 451 mappings across 31 spans, counting the E4/E5 halves separately:
 114 repeat-supported, 337 seen only once. Two symbols are connected if a chain of links joins
 them, in either direction.</p>
 

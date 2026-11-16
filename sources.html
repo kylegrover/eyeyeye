@@ -4,10 +4,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sources: Noita eye messages</title>
 <link rel="icon" href="favicon.ico">
-<link rel="stylesheet" href="style.css?v=66355e6f">
+<link rel="stylesheet" href="style.css?v=687f08e0">
 
 <main>
-<nav><a href="index.html">Research</a><a href="isomorphs.html">Isomorphs</a><a href="ruled-out.html">Exclusions &amp; searches</a><a href="model.html">Model</a><a href="plaintext.html">Plaintext</a><a href="messages.html">Basics &amp; data</a><a href="sources.html">Sources &amp; tools</a></nav>
+<nav><a href="index.html">Research</a><a href="messages.html">Basics &amp; data</a><a href="isomorphs.html">Isomorphs</a><a href="model.html">Model</a><a href="ruled-out.html">Exclusions &amp; searches</a><a href="plaintext.html">Plaintext</a><a href="sources.html">Sources &amp; tools</a></nav>
 
 <h1>Sources &amp; tools</h1>
 
@@ -44,7 +44,8 @@ the Python 3 standard library. <code>one_shuffle.py</code> and <code>commute.py<
 
 <ul>
   <li><a href="evidence/arrow-ledger-v1.json">Copy-link ledger</a>: aligned cells, repeat support,
-    connected sets and single-shuffle certificates.</li>
+    connected sets and single-shuffle certificates. The file calls a link an arrow and an
+    isomorph span a window.</li>
   <li><a href="evidence/assumption-p5-v1.txt">No-doubles experiment</a>: 400 random keys, then
     200 conditioned and 200 designed keys. The setup is described on the
     <a href="model.html#doubles">model page</a>; it used local game text, which is not redistributed.</li>
@@ -63,8 +64,12 @@ the Python 3 standard library. <code>one_shuffle.py</code> and <code>commute.py<
 
 <h2 id="search-records">Search records</h2>
 
-<p>Each file gives the seed range, variant count, logging cutoff and best candidates of one run.
-The Lua-recipe runs:</p>
+<p>Each file gives the seed range, variant count, logging cutoff and best candidates of one run
+of the <a href="ruled-out.html#searches">key searches</a>. In the names below, pick and
+Fisher–Yates are the two Lua shuffle loops; D12 layouts give letter <i>i</i> read position
+<i>i</i>, and table layouts give a character its place in the 83-character table; small seeds
+are 0 to 999,999 and clock seeds are the seconds of the release window. D12 is the file-name
+label of the clock-seed search. The Lua-recipe runs:</p>
 <ul>
   <li><a href="evidence/lua/luajit-pick-d12-small.json">LuaJIT pick, D12 layouts, small seeds</a></li>
   <li><a href="evidence/lua/luajit-fy-d12-small.json">LuaJIT Fisher–Yates, D12 layouts, small seeds</a></li>
