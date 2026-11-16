@@ -20,4 +20,17 @@ pre .dim { color: #999; }                         /* labels, cell numbers, patte
 .glyphs path { fill: #2b2a26; }
 .glyphs text { font: 5px ui-monospace, Consolas, monospace; fill: #b3400a; text-anchor: middle; }
 .glyphs text.digits { fill: #999; }  /* the three eye digits of a cell, in reading order */
+/* each triangle of the eye exhibit is a group: faint outline, numbered reading order on hover/focus */
+.glyphs polygon { fill: transparent; stroke: #cfc6b0; stroke-width: .6; stroke-linejoin: round; }
+.glyphs .order { font-size: 4px; fill: transparent; }
+.glyphs .cell { outline: none; }
+.glyphs .cell:hover polygon, .glyphs .cell:focus polygon { fill: #fde68a; fill-opacity: .55; stroke: #b3400a; }
+.glyphs .cell:hover .order, .glyphs .cell:focus .order { fill: #b3400a; }
+.glyphs .cell:hover text.digits, .glyphs .cell:focus text.digits { fill: #2b2a26; }
+/* hover links in symbol exhibits (site.js); arcs join each repeat to its next occurrence */
+pre.exhibit span[data-i], pre.exhibit span[data-k] { border-radius: 2px; }
+pre.exhibit .lit { background: #f3e2c4; }
+pre.exhibit svg.arcs { display: block; height: 11px; overflow: visible; }
+.arcs path { fill: none; stroke: #e0b89c; stroke-width: 1.2px; vector-effect: non-scaling-stroke; }
+.arcs path.lit { stroke: #b3400a; stroke-width: 2px; background: none; }
 .formal { background: #faf8f2; border-left: 3px solid #e2ddd0; padding: .5rem .75rem; }
