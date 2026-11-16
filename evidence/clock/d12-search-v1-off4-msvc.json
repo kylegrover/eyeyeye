@@ -1,0 +1,386 @@
+{
+ "rng": "msvc",
+ "offset": 4,
+ "window": [
+  1594810500,
+  1602806400
+ ],
+ "variants": 5472,
+ "seeds": 7995900,
+ "log_depth": 25,
+ "hits_logged": 19,
+ "best": [
+  {
+   "seed": 1598059461,
+   "variant": "L26/first/L|D|S/3/0111111111111111111111111112222222222/deck+S/201/scatter/ptr/skip0/plain/reuse",
+   "e1_depth": 25,
+   "score": 31,
+   "total": 918,
+   "per_message": [
+    25,
+    0,
+    32,
+    0,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "seed": 1598059461,
+   "variant": "L26/first/L|D|S/3/0111111111111111111111111112222222222/deck+S/201/scatter/ptr/skip0/R2/reuse",
+   "e1_depth": 25,
+   "score": 31,
+   "total": 918,
+   "per_message": [
+    25,
+    0,
+    32,
+    0,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "seed": 1595933477,
+   "variant": "L26/first/L|D|S/3/0111111111111111111111111112222222222/S/210/scatter/ptr/skip0/plain/fresh",
+   "e1_depth": 26,
+   "score": 30,
+   "total": 918,
+   "per_message": [
+    26,
+    0,
+    0,
+    2,
+    8,
+    6,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "seed": 1595933477,
+   "variant": "L26/first/L|D|S/3/0111111111111111111111111112222222222/S/210/scatter/ptr/skip0/R2/fresh",
+   "e1_depth": 26,
+   "score": 30,
+   "total": 918,
+   "per_message": [
+    26,
+    0,
+    0,
+    2,
+    8,
+    6,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "seed": 1599696941,
+   "variant": "L25/last/L|D|S/3/000000000000000000000000011111111112/S/012/gather/ptr/skip0/R2/reuse",
+   "e1_depth": 25,
+   "score": 26,
+   "total": 918,
+   "per_message": [
+    25,
+    0,
+    27,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "seed": 1599719237,
+   "variant": "L26/last/L|D|S/3/0000000000000000000000000011111111112/S+deck/201/gather/rtp/skip1/plain/reuse",
+   "e1_depth": 25,
+   "score": 26,
+   "total": 918,
+   "per_message": [
+    25,
+    24,
+    24,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "seed": 1599719237,
+   "variant": "L26/last/L|D|S/3/0000000000000000000000000011111111112/S+deck/201/gather/rtp/skip1/R2/reuse",
+   "e1_depth": 25,
+   "score": 26,
+   "total": 918,
+   "per_message": [
+    25,
+    24,
+    24,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "seed": 1602551913,
+   "variant": "L26/last/L|D|S/3/0000000000000000000000000011111111112/S+deck/012/scatter/ptr/skip0/plain/fresh",
+   "e1_depth": 26,
+   "score": 26,
+   "total": 918,
+   "per_message": [
+    26,
+    26,
+    0,
+    3,
+    0,
+    3,
+    0,
+    3,
+    3
+   ]
+  },
+  {
+   "seed": 1602551913,
+   "variant": "L26/last/L|D|S/3/0000000000000000000000000011111111112/S+deck/012/scatter/ptr/skip0/R2/fresh",
+   "e1_depth": 26,
+   "score": 26,
+   "total": 918,
+   "per_message": [
+    26,
+    26,
+    0,
+    3,
+    0,
+    3,
+    0,
+    3,
+    3
+   ]
+  },
+  {
+   "seed": 1597608278,
+   "variant": "L26/last/L|D|S/3/0000000000000000000000000011111111112/deck+S/201/gather/rtp/skip0/R2/fresh",
+   "e1_depth": 26,
+   "score": 25,
+   "total": 918,
+   "per_message": [
+    26,
+    4,
+    4,
+    0,
+    3,
+    3,
+    0,
+    0,
+    3
+   ]
+  },
+  {
+   "seed": 1597748215,
+   "variant": "L26/first/L|DS/2/0111111111111111111111111110000000000/deck+S/01/scatter/rtp/skip0/plain/reuse",
+   "e1_depth": 25,
+   "score": 24,
+   "total": 918,
+   "per_message": [
+    25,
+    0,
+    0,
+    2,
+    0,
+    3,
+    0,
+    3,
+    3
+   ]
+  },
+  {
+   "seed": 1597748215,
+   "variant": "L26/first/L|DS/2/0111111111111111111111111110000000000/deck+S/01/scatter/rtp/skip0/R2/reuse",
+   "e1_depth": 25,
+   "score": 24,
+   "total": 918,
+   "per_message": [
+    25,
+    0,
+    0,
+    2,
+    0,
+    3,
+    0,
+    3,
+    3
+   ]
+  },
+  {
+   "seed": 1597982787,
+   "variant": "L25/after-letters/L|D|S/3/000000000000000000000000012222222222/S/012/scatter/ptr/skip0/plain/fresh",
+   "e1_depth": 25,
+   "score": 24,
+   "total": 918,
+   "per_message": [
+    25,
+    0,
+    25,
+    0,
+    0,
+    0,
+    3,
+    3,
+    0
+   ]
+  },
+  {
+   "seed": 1597982787,
+   "variant": "L25/after-letters/L|D|S/3/000000000000000000000000012222222222/S/012/scatter/ptr/skip0/R2/fresh",
+   "e1_depth": 25,
+   "score": 24,
+   "total": 918,
+   "per_message": [
+    25,
+    0,
+    25,
+    0,
+    0,
+    0,
+    3,
+    3,
+    0
+   ]
+  },
+  {
+   "seed": 1599231155,
+   "variant": "L25/after-letters/L|D|S/3/000000000000000000000000012222222222/deck+S/201/scatter/ptr/skip0/plain/fresh",
+   "e1_depth": 25,
+   "score": 24,
+   "total": 918,
+   "per_message": [
+    25,
+    0,
+    2,
+    2,
+    3,
+    3,
+    2,
+    0,
+    0
+   ]
+  },
+  {
+   "seed": 1599231155,
+   "variant": "L25/after-letters/L|D|S/3/000000000000000000000000012222222222/deck+S/201/scatter/ptr/skip0/R2/fresh",
+   "e1_depth": 25,
+   "score": 24,
+   "total": 918,
+   "per_message": [
+    25,
+    0,
+    2,
+    2,
+    3,
+    3,
+    2,
+    0,
+    0
+   ]
+  },
+  {
+   "seed": 1599696941,
+   "variant": "L25/last/L|D|S/3/000000000000000000000000011111111112/S/012/gather/ptr/skip0/plain/reuse",
+   "e1_depth": 25,
+   "score": 24,
+   "total": 918,
+   "per_message": [
+    25,
+    0,
+    25,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "seed": 1601579171,
+   "variant": "L26/last/K1/1/0000000000000000000000000000000000000/deck+S/0/gather/rtp/skip0/plain/reuse",
+   "e1_depth": 25,
+   "score": 24,
+   "total": 918,
+   "per_message": [
+    25,
+    25,
+    0,
+    0,
+    0,
+    3,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "seed": 1601579171,
+   "variant": "L26/last/K1/1/0000000000000000000000000000000000000/deck+S/0/gather/rtp/skip0/R2/reuse",
+   "e1_depth": 25,
+   "score": 24,
+   "total": 918,
+   "per_message": [
+    25,
+    25,
+    0,
+    0,
+    0,
+    3,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "seconds": 11073.3,
+ "e1_depth_hist_total": [
+  28602559122,
+  8616813639,
+  3676363881,
+  1602809789,
+  701606521,
+  309009897,
+  136470056,
+  60164262,
+  26642342,
+  11792036,
+  5207012,
+  2302583,
+  1014211,
+  449706,
+  201028,
+  87949,
+  40027,
+  16593,
+  7954,
+  3392,
+  1555,
+  699,
+  323,
+  125,
+  79,
+  14,
+  5
+ ]
+}

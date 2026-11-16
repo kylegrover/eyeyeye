@@ -7,13 +7,13 @@
 <link rel="stylesheet" href="style.css?v=66355e6f">
 
 <main>
-<nav><a href="index.html">Research</a><a href="isomorphs.html">Isomorphs</a><a href="ruled-out.html">Constraints &amp; searches</a><a href="model.html">Model &amp; checks</a><a href="messages.html">Basics &amp; data</a><a href="sources.html">Sources &amp; tools</a></nav>
+<nav><a href="index.html">Research</a><a href="isomorphs.html">Isomorphs</a><a href="ruled-out.html">Exclusions &amp; searches</a><a href="model.html">Model</a><a href="plaintext.html">Plaintext</a><a href="messages.html">Basics &amp; data</a><a href="sources.html">Sources &amp; tools</a></nav>
 
 <h1>Basics &amp; data</h1>
 
-<p>Nine walls of eye glyphs, still unsolved. The <a href="https://noita.wiki.gg/wiki/Eye_Messages">Noita
-wiki</a> has their locations and screenshots. This page collects the reading convention and
-reference data; the <a href="index.html">front page</a> covers the research results.</p>
+<p>The reading of the glyphs, the transcription, and the shared openings. The
+<a href="https://noita.wiki.gg/wiki/Eye_Messages">Noita wiki</a> has the locations and
+screenshots.</p>
 
 <h2>Reading the eyes</h2>
 
@@ -31,16 +31,14 @@ turns with it: bottom right, bottom left, then the eye above. The eye directions
 not turned. The 1,036 decoded symbols use exactly 0 to 82, though three base-5 digits could encode
 0 to 124. Cell numbers on this site count from 0.</p>
 
-<p>An orientation audit kept the up triangles fixed and tested six digit orders × four direction
-mappings for the down triangles. Only the conventional reading retained all three tested
-features: the contiguous 0–82 range, no adjacent doubles, and consistency of 12 selected
-isomorph pairs. This compares those 24 readings, not every possible way to group eyes.
-<a href="tools/eyes.py">The decoder</a> checks the adopted reading against all nine transcriptions.</p>
+<p>With the up triangles fixed, there are 24 ways to read a down triangle: six orders of its
+three eyes, with the eye directions kept or swapped in pairs one of three ways. Only this reading
+gives all of: values filling 0–82 with no gaps, no adjacent doubles, and no conflict in twelve
+isomorph pairs. <a href="tools/eyes.py">The decoder</a> rebuilds all nine messages from the eye
+rows.</p>
 
-<p>The grouping and deck-cipher hypotheses are developed in
-<a href="https://github.com/Lymm37/eye-messages/wiki">Lymm's wiki</a>. An eye-reading convention is
-not itself a decryption; the <a href="model.html">class-shuffle model</a> begins with the resulting
-83 symbols.</p>
+<p><a href="https://github.com/Lymm37/eye-messages/wiki">Lymm's wiki</a> covers the reading and
+the alternatives that were tried.</p>
 
 <h2 id="transcription">The transcription</h2>
 
@@ -128,10 +126,10 @@ left. <a href="eyes.json">eyes.json</a> contains these numbers and the raw eye d
 
 <p>Cell 0 holds 50, 80, 36, 76, 63, 34, 27, 77 and 33, in the order E1, W1, E2, W2, E3, W3, E4,
 W4, E5. Read as three eye digits, the middle digit of each message is the first digit of the
-previous message minus one, in 7 of the 8 steps. In the ordering test, 1.4% of shuffled orders
-had some relation among the 81 tested digit/offset rules reach 7 of 8. Dr Cats reported the
-chain on the Noita Discord. It suggests ordering metadata, but does not establish a unique order
-or prove that cell 0 is unencrypted. The model and body statistics here exclude cell 0; the
-transcription includes it.</p>
+previous message minus one, in 7 of the 8 steps (found by Dr Cats, on the Noita Discord). It
+is the best of 81 relations of this kind, and in shuffled orders the best of the 81 reaches 7
+of 8 only 1.4% of the time. So cell 0 most likely numbers the messages, and the rest of these
+pages leave it out of the cipher. All nine messages agree at cells 1 and 2 whatever cell 0
+holds.</p>
 </main>
 <script src="eyes-bg.js?v=bd0eac51" data-mode="random"></script>

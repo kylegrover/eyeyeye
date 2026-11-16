@@ -1,0 +1,555 @@
+{
+ "eyes": {
+  "O9": 9,
+  "SELF": 3,
+  "S": 32,
+  "S20": 11
+ },
+ "trials": 200,
+ "genres": {
+  "control-eyes-template [unspaced]": {
+   "trials": 200,
+   "A_max": 30,
+   "median": {
+    "O9": 10,
+    "SELF": 6,
+    "S": 39,
+    "S20": 5
+   },
+   "P_O9_ge6": 1.0,
+   "P_SELF_ge2": 0.93,
+   "P_S20_ge5": 0.535,
+   "P_joint": 0.52,
+   "P_S_ge64": 0.065,
+   "units": 0,
+   "verdict": "fits"
+  },
+  "control-eyes-template [spaced]": {
+   "trials": 200,
+   "A_max": 31,
+   "median": {
+    "O9": 10,
+    "SELF": 6,
+    "S": 36,
+    "S20": 4
+   },
+   "P_O9_ge6": 1.0,
+   "P_SELF_ge2": 0.95,
+   "P_S20_ge5": 0.48,
+   "P_joint": 0.475,
+   "P_S_ge64": 0.09,
+   "units": 0,
+   "verdict": "fits"
+  },
+  "verse-triolet [unspaced]": {
+   "trials": 200,
+   "A_max": 28,
+   "median": {
+    "O9": 0,
+    "SELF": 2,
+    "S": 7,
+    "S20": 2
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.69,
+   "P_S20_ge5": 0.115,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 192,
+   "verdict": "partial"
+  },
+  "verse-triolet [spaced]": {
+   "trials": 200,
+   "A_max": 29,
+   "median": {
+    "O9": 0,
+    "SELF": 2,
+    "S": 7,
+    "S20": 2
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.655,
+   "P_S20_ge5": 0.265,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 192,
+   "verdict": "partial"
+  },
+  "verse-villanelle [unspaced]": {
+   "trials": 200,
+   "A_max": 31,
+   "median": {
+    "O9": 0,
+    "SELF": 0,
+    "S": 9,
+    "S20": 4
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.105,
+   "P_S20_ge5": 0.44,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 376,
+   "verdict": "partial"
+  },
+  "verse-villanelle [spaced]": {
+   "trials": 200,
+   "A_max": 31,
+   "median": {
+    "O9": 0,
+    "SELF": 0,
+    "S": 11,
+    "S20": 7
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.125,
+   "P_S20_ge5": 0.62,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 376,
+   "verdict": "partial"
+  },
+  "verse-pantoum [unspaced]": {
+   "trials": 200,
+   "A_max": 30,
+   "median": {
+    "O9": 0,
+    "SELF": 1,
+    "S": 6,
+    "S20": 2
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.27,
+   "P_S20_ge5": 0.075,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 112,
+   "verdict": "partial"
+  },
+  "verse-pantoum [spaced]": {
+   "trials": 200,
+   "A_max": 31,
+   "median": {
+    "O9": 0,
+    "SELF": 0,
+    "S": 8,
+    "S20": 4
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.11,
+   "P_S20_ge5": 0.485,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 112,
+   "verdict": "partial"
+  },
+  "verse-rondel [unspaced]": {
+   "trials": 200,
+   "A_max": 26,
+   "median": {
+    "O9": 1,
+    "SELF": 1,
+    "S": 5,
+    "S20": 0
+   },
+   "P_O9_ge6": 0.04,
+   "P_SELF_ge2": 0.2,
+   "P_S20_ge5": 0.03,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 658,
+   "verdict": "does not arise"
+  },
+  "verse-rondel [spaced]": {
+   "trials": 200,
+   "A_max": 27,
+   "median": {
+    "O9": 1,
+    "SELF": 1,
+    "S": 4,
+    "S20": 1
+   },
+   "P_O9_ge6": 0.07,
+   "P_SELF_ge2": 0.32,
+   "P_S20_ge5": 0.065,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 658,
+   "verdict": "partial"
+  },
+  "verse-kyrielle [unspaced]": {
+   "trials": 200,
+   "A_max": 25,
+   "median": {
+    "O9": 0,
+    "SELF": 2,
+    "S": 8,
+    "S20": 3
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.595,
+   "P_S20_ge5": 0.15,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 53,
+   "verdict": "partial"
+  },
+  "verse-kyrielle [spaced]": {
+   "trials": 200,
+   "A_max": 26,
+   "median": {
+    "O9": 0,
+    "SELF": 1,
+    "S": 7,
+    "S20": 3
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.195,
+   "P_S20_ge5": 0.24,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 53,
+   "verdict": "partial"
+  },
+  "verse-ballade [unspaced]": {
+   "trials": 200,
+   "A_max": 26,
+   "median": {
+    "O9": 0,
+    "SELF": 0,
+    "S": 3,
+    "S20": 0
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.045,
+   "P_S20_ge5": 0.015,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 646,
+   "verdict": "does not arise"
+  },
+  "verse-ballade [spaced]": {
+   "trials": 200,
+   "A_max": 27,
+   "median": {
+    "O9": 0,
+    "SELF": 0,
+    "S": 3,
+    "S20": 0
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.045,
+   "P_S20_ge5": 0.0,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 646,
+   "verdict": "does not arise"
+  },
+  "psalms [unspaced]": {
+   "trials": 200,
+   "A_max": 26,
+   "median": {
+    "O9": 0,
+    "SELF": 0,
+    "S": 4,
+    "S20": 0
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.14,
+   "P_S20_ge5": 0.02,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.005,
+   "units": 2462,
+   "verdict": "does not arise"
+  },
+  "psalms [spaced]": {
+   "trials": 200,
+   "A_max": 27,
+   "median": {
+    "O9": 0,
+    "SELF": 1,
+    "S": 4,
+    "S20": 0
+   },
+   "P_O9_ge6": 0.005,
+   "P_SELF_ge2": 0.2,
+   "P_S20_ge5": 0.025,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.005,
+   "units": 2462,
+   "verdict": "does not arise"
+  },
+  "litany-psalm-136 [unspaced]": {
+   "trials": 200,
+   "A_max": 22,
+   "median": {
+    "O9": 1,
+    "SELF": 6,
+    "S": 109,
+    "S20": 78
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.935,
+   "P_S20_ge5": 0.99,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.805,
+   "units": 26,
+   "verdict": "partial"
+  },
+  "litany-psalm-136 [spaced]": {
+   "trials": 200,
+   "A_max": 23,
+   "median": {
+    "O9": 2,
+    "SELF": 3,
+    "S": 62,
+    "S20": 55
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.95,
+   "P_S20_ge5": 1.0,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.45,
+   "units": 26,
+   "verdict": "partial"
+  },
+  "nursery-rhymes [unspaced]": {
+   "trials": 200,
+   "A_max": 34,
+   "median": {
+    "O9": 0,
+    "SELF": 2,
+    "S": 7,
+    "S20": 2
+   },
+   "P_O9_ge6": 0.095,
+   "P_SELF_ge2": 0.705,
+   "P_S20_ge5": 0.24,
+   "P_joint": 0.055,
+   "P_S_ge64": 0.0,
+   "units": 514,
+   "verdict": "fits"
+  },
+  "nursery-rhymes [spaced]": {
+   "trials": 200,
+   "A_max": 34,
+   "median": {
+    "O9": 0,
+    "SELF": 3,
+    "S": 8,
+    "S20": 2
+   },
+   "P_O9_ge6": 0.035,
+   "P_SELF_ge2": 0.875,
+   "P_S20_ge5": 0.195,
+   "P_joint": 0.025,
+   "P_S_ge64": 0.0,
+   "units": 514,
+   "verdict": "partial"
+  },
+  "recipes [unspaced]": {
+   "trials": 200,
+   "A_max": 36,
+   "median": {
+    "O9": 0,
+    "SELF": 0,
+    "S": 9,
+    "S20": 1
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.1,
+   "P_S20_ge5": 0.145,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 1301,
+   "verdict": "partial"
+  },
+  "recipes [spaced]": {
+   "trials": 200,
+   "A_max": 37,
+   "median": {
+    "O9": 0,
+    "SELF": 0,
+    "S": 13,
+    "S20": 3
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.14,
+   "P_S20_ge5": 0.35,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 1301,
+   "verdict": "partial"
+  },
+  "finnish-kanteletar [unspaced]": {
+   "trials": 200,
+   "A_max": 36,
+   "median": {
+    "O9": 0,
+    "SELF": 1,
+    "S": 5,
+    "S20": 1
+   },
+   "P_O9_ge6": 0.075,
+   "P_SELF_ge2": 0.21,
+   "P_S20_ge5": 0.125,
+   "P_joint": 0.005,
+   "P_S_ge64": 0.0,
+   "units": 3546,
+   "verdict": "partial"
+  },
+  "finnish-kanteletar [spaced]": {
+   "trials": 200,
+   "A_max": 37,
+   "median": {
+    "O9": 1,
+    "SELF": 1,
+    "S": 6,
+    "S20": 2
+   },
+   "P_O9_ge6": 0.115,
+   "P_SELF_ge2": 0.305,
+   "P_S20_ge5": 0.195,
+   "P_joint": 0.01,
+   "P_S_ge64": 0.0,
+   "units": 3546,
+   "verdict": "partial"
+  },
+  "finnish-kalevala [unspaced]": {
+   "trials": 200,
+   "A_max": 33,
+   "median": {
+    "O9": 0,
+    "SELF": 0,
+    "S": 7,
+    "S20": 2
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.06,
+   "P_S20_ge5": 0.275,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 119,
+   "verdict": "partial"
+  },
+  "finnish-kalevala [spaced]": {
+   "trials": 200,
+   "A_max": 33,
+   "median": {
+    "O9": 0,
+    "SELF": 0,
+    "S": 11,
+    "S20": 3
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.12,
+   "P_S20_ge5": 0.385,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 119,
+   "verdict": "partial"
+  },
+  "song-twelve-days [unspaced]": {
+   "trials": 200,
+   "A_max": 23,
+   "median": {
+    "O9": 0,
+    "SELF": 1,
+    "S": 62,
+    "S20": 56
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.255,
+   "P_S20_ge5": 1.0,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.38,
+   "units": 12,
+   "verdict": "partial"
+  },
+  "song-twelve-days [spaced]": {
+   "trials": 200,
+   "A_max": 24,
+   "median": {
+    "O9": 1,
+    "SELF": 1,
+    "S": 53,
+    "S20": 47
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.11,
+   "P_S20_ge5": 1.0,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.085,
+   "units": 12,
+   "verdict": "partial"
+  },
+  "song-green-bottles [unspaced]": {
+   "trials": 200,
+   "A_max": 20,
+   "median": {
+    "O9": 0,
+    "SELF": 9,
+    "S": 160,
+    "S20": 152
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 1.0,
+   "P_S20_ge5": 1.0,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.925,
+   "units": 10,
+   "verdict": "partial"
+  },
+  "song-green-bottles [spaced]": {
+   "trials": 200,
+   "A_max": 21,
+   "median": {
+    "O9": 0,
+    "SELF": 9,
+    "S": 156,
+    "S20": 152
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 1.0,
+   "P_S20_ge5": 1.0,
+   "P_joint": 0.0,
+   "P_S_ge64": 1.0,
+   "units": 10,
+   "verdict": "partial"
+  },
+  "song-99-bottles [unspaced]": {
+   "trials": 200,
+   "A_max": 27,
+   "median": {
+    "O9": 0,
+    "SELF": 9,
+    "S": 325,
+    "S20": 76
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 1.0,
+   "P_S20_ge5": 1.0,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.945,
+   "units": 99,
+   "verdict": "partial"
+  },
+  "song-99-bottles [spaced]": {
+   "trials": 200,
+   "A_max": 28,
+   "median": {
+    "O9": 0,
+    "SELF": 7,
+    "S": 173,
+    "S20": 143
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.975,
+   "P_S20_ge5": 1.0,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.97,
+   "units": 99,
+   "verdict": "partial"
+  }
+ }
+}

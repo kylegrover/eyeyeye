@@ -7,12 +7,9 @@
 <link rel="stylesheet" href="style.css?v=66355e6f">
 
 <main>
-<nav><a href="index.html">Research</a><a href="isomorphs.html">Isomorphs</a><a href="ruled-out.html">Constraints &amp; searches</a><a href="model.html">Model &amp; checks</a><a href="messages.html">Basics &amp; data</a><a href="sources.html">Sources &amp; tools</a></nav>
+<nav><a href="index.html">Research</a><a href="isomorphs.html">Isomorphs</a><a href="ruled-out.html">Exclusions &amp; searches</a><a href="model.html">Model</a><a href="plaintext.html">Plaintext</a><a href="messages.html">Basics &amp; data</a><a href="sources.html">Sources &amp; tools</a></nav>
 
 <h1>Sources &amp; tools</h1>
-
-<p>Community sources establish the background; the scripts and records below let readers check
-specific calculations. A new calculation or explicit certificate is not a claim of first discovery.</p>
 
 <h2>The data</h2>
 
@@ -28,8 +25,7 @@ locations and pictures of the walls.</p>
 <p>Download <a href="eyes.json">eyes.json</a> and the five scripts into one folder. They use only
 the Python 3 standard library. <code>one_shuffle.py</code> and <code>commute.py</code> import
 <code>isomorph.py</code>; all four checks import <code>eyes.py</code>. For example, run
-<code>uv run python one_shuffle.py</code>. Passing a script checks its stated calculation, not
-whether its plaintext assumptions are true.</p>
+<code>python one_shuffle.py</code>.</p>
 
 <table>
   <tr><td><a href="tools/eyes.py">eyes.py</a></td><td>loads the messages; run it to rebuild every
@@ -41,7 +37,7 @@ whether its plaintext assumptions are true.</p>
   <tr><td><a href="tools/commute.py">commute.py</a></td><td>two copy maps that do not commute
     (<a href="isomorphs.html#commute">isomorphs</a>)</td></tr>
   <tr><td><a href="tools/periodic_bound.py">periodic_bound.py</a></td><td>the counting bound for
-    repeating keys (<a href="ruled-out.html">ruled out</a>)</td></tr>
+    repeating keys (<a href="ruled-out.html#free">exclusions</a>)</td></tr>
 </table>
 
 <h2 id="records">Calculation records</h2>
@@ -53,16 +49,22 @@ whether its plaintext assumptions are true.</p>
     200 conditioned and 200 designed keys. The setup is described on the
     <a href="model.html#doubles">model page</a>; it used local game text, which is not redistributed.</li>
   <li><a href="evidence/assumption-p3-v1.txt">Block-permutation counts</a>: the exhaustive
-    block-size 2–8 check, not arbitrary transposition.</li>
+    check of block sizes 2–8.</li>
+  <li><a href="evidence/tuck-audit-v1.txt">Tuck audit</a>: return times and the alphabet size
+    each message would need.</li>
+  <li><a href="evidence/genre-shape-v1.json">Genre screen</a>: every verse form, spaced and
+    unspaced (<a href="plaintext.html#genres">plaintext</a>).</li>
+  <li><a href="evidence/constraint-sheet-v1.json">Constraint sheet</a>: which cells are tied,
+    at each level of assumption (<a href="plaintext.html#sheet">plaintext</a>).</li>
   <li><a href="evidence/fill-calibration-v1.json">Earlier fill calibration</a>: 200 fills per
-    configuration, using pairwise checks. This is distinct from the later 120-fill closure
-    diagnostic described on the <a href="model.html#checking">model page</a>.</li>
+    configuration, using pairwise checks. The 120-fill closure test on the
+    <a href="model.html#checking">model page</a> is a later, separate run.</li>
 </ul>
 
-<h2 id="search-records">Lua-recipe search records</h2>
+<h2 id="search-records">Search records</h2>
 
-<p>Each file contains the actual seed range, variant count, logging cutoff and best logged
-candidates. Candidate scores measure compatible prefix lengths, not readable plaintext.</p>
+<p>Each file gives the seed range, variant count, logging cutoff and best candidates of one run.
+The Lua-recipe runs:</p>
 <ul>
   <li><a href="evidence/lua/luajit-pick-d12-small.json">LuaJIT pick, D12 layouts, small seeds</a></li>
   <li><a href="evidence/lua/luajit-fy-d12-small.json">LuaJIT Fisher–Yates, D12 layouts, small seeds</a></li>
@@ -75,6 +77,9 @@ candidates. Candidate scores measure compatible prefix lengths, not readable pla
   <li><a href="evidence/lua/msvc-table-window.json">MSVC, table layouts, clock seeds</a></li>
   <li><a href="evidence/lua/glibc-table-window.json">glibc, table layouts, clock seeds</a></li>
 </ul>
+
+<p>The clock-seed runs with <code>std::random_shuffle</code>:
+<a href="evidence/clock/d12-search-v1.json">MSVC</a>, <a href="evidence/clock/d12-search-v1-off1-msvc.json">MSVC, 1 discarded</a>, <a href="evidence/clock/d12-search-v1-off2-msvc.json">MSVC, 2 discarded</a>, <a href="evidence/clock/d12-search-v1-off3-msvc.json">MSVC, 3 discarded</a>, <a href="evidence/clock/d12-search-v1-off4-msvc.json">MSVC, 4 discarded</a>, <a href="evidence/clock/d12-search-v1-off5-msvc.json">MSVC, 5 discarded</a>, <a href="evidence/clock/d12-search-v1-off6-msvc.json">MSVC, 6 discarded</a>, <a href="evidence/clock/d12-search-v1-off7-msvc.json">MSVC, 7 discarded</a>, <a href="evidence/clock/d12-search-v1-off8-msvc.json">MSVC, 8 discarded</a>, <a href="evidence/clock/d12-search-v1-glibc.json">glibc</a>, <a href="evidence/clock/d12-search-v1-off1-glibc.json">glibc, 1 discarded</a>, <a href="evidence/clock/d12-search-v1-off2-glibc.json">glibc, 2 discarded</a>, <a href="evidence/clock/d12-search-v1-off3-glibc.json">glibc, 3 discarded</a>, <a href="evidence/clock/d12-search-v1-off4-glibc.json">glibc, 4 discarded</a>, <a href="evidence/clock/d12-search-v1-off5-glibc.json">glibc, 5 discarded</a>, <a href="evidence/clock/d12-search-v1-off6-glibc.json">glibc, 6 discarded</a>, <a href="evidence/clock/d12-search-v1-off7-glibc.json">glibc, 7 discarded</a>, <a href="evidence/clock/d12-search-v1-off8-glibc.json">glibc, 8 discarded</a>.</p>
 
 <h2>Community work</h2>
 
@@ -102,16 +107,16 @@ uses:</p>
 <h2>Background</h2>
 
 <ul>
-  <li>The cipher families on the <a href="ruled-out.html">ruled out</a> page:
+  <li>The cipher families on the <a href="ruled-out.html">exclusions</a> page:
     <a href="https://en.wikipedia.org/wiki/Substitution_cipher">substitution</a>,
     <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher">Vigenère</a>,
     <a href="https://en.wikipedia.org/wiki/Autokey_cipher">autokey</a>,
-    <a href="https://en.wikipedia.org/wiki/Alberti_cipher">Alberti</a>,
-    <a href="https://en.wikipedia.org/wiki/Rotor_machine">rotor machines</a>,
+    <a href="https://en.wikipedia.org/wiki/Affine_cipher">affine</a>,
     <a href="https://en.wikipedia.org/wiki/Transposition_cipher">transposition</a>.</li>
-  <li>Examples of other card-based ciphers, not endorsements as solutions to the eyes:
-    <a href="https://en.wikipedia.org/wiki/Solitaire_(cipher)">Solitaire</a> and
-    <a href="https://en.wikipedia.org/wiki/Chaocipher">Chaocipher</a>.</li>
+  <li>Card and disk ciphers whose steps depend on the symbols themselves, excluded under R:
+    <a href="https://en.wikipedia.org/wiki/Solitaire_(cipher)">Solitaire</a>,
+    <a href="https://en.wikipedia.org/wiki/Chaocipher">Chaocipher</a>,
+    <a href="https://en.wikipedia.org/wiki/RC4">RC4</a>.</li>
 </ul>
 </main>
 <script src="eyes-bg.js?v=bd0eac51" data-mode="random"></script>

@@ -1,0 +1,407 @@
+{
+ "rng": "glibc",
+ "window": [
+  1592179200,
+  1602806400
+ ],
+ "variants": 5472,
+ "seeds": 10627200,
+ "log_depth": 25,
+ "hits_logged": 86,
+ "best": [
+  {
+   "seed": 1599181415,
+   "variant": "L26/last/L|D|S/3/0000000000000000000000000011111111112/S/012/gather/ptr/skip1/plain/reuse",
+   "e1_depth": 30,
+   "score": 34,
+   "total": 918,
+   "per_message": [
+    30,
+    24,
+    27,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "seed": 1599181415,
+   "variant": "L26/last/L|D|S/3/0000000000000000000000000011111111112/S/012/gather/ptr/skip1/R2/reuse",
+   "e1_depth": 30,
+   "score": 34,
+   "total": 918,
+   "per_message": [
+    30,
+    24,
+    27,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "seed": 1596424527,
+   "variant": "L26/after-letters/L|D|S/3/0000000000000000000000000012222222222/S+deck/021/scatter/ptr/skip1/R2/reuse",
+   "e1_depth": 26,
+   "score": 33,
+   "total": 918,
+   "per_message": [
+    26,
+    26,
+    29,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "seed": 1601768195,
+   "variant": "L25/first/L|D|S/3/011111111111111111111111112222222222/S+deck/102/gather/ptr/skip1/plain/fresh",
+   "e1_depth": 26,
+   "score": 33,
+   "total": 918,
+   "per_message": [
+    26,
+    29,
+    26,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "seed": 1601768195,
+   "variant": "L25/first/L|D|S/3/011111111111111111111111112222222222/S+deck/102/gather/ptr/skip1/R2/fresh",
+   "e1_depth": 26,
+   "score": 33,
+   "total": 918,
+   "per_message": [
+    26,
+    29,
+    26,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "seed": 1601768195,
+   "variant": "L26/last/L|D|S/3/0000000000000000000000000011111111112/S+deck/021/gather/ptr/skip1/plain/fresh",
+   "e1_depth": 26,
+   "score": 33,
+   "total": 918,
+   "per_message": [
+    26,
+    29,
+    26,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "seed": 1601768195,
+   "variant": "L26/last/L|D|S/3/0000000000000000000000000011111111112/S+deck/021/gather/ptr/skip1/R2/fresh",
+   "e1_depth": 26,
+   "score": 33,
+   "total": 918,
+   "per_message": [
+    26,
+    29,
+    26,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "seed": 1597377806,
+   "variant": "L26/first/L|D|S/3/0111111111111111111111111112222222222/deck+S/102/scatter/rtp/skip1/plain/fresh",
+   "e1_depth": 25,
+   "score": 31,
+   "total": 918,
+   "per_message": [
+    25,
+    28,
+    24,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  {
+   "seed": 1597377806,
+   "variant": "L26/first/L|D|S/3/0111111111111111111111111112222222222/deck+S/102/scatter/rtp/skip1/R2/fresh",
+   "e1_depth": 25,
+   "score": 31,
+   "total": 918,
+   "per_message": [
+    25,
+    28,
+    24,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  {
+   "seed": 1598675711,
+   "variant": "L26/last/L|D|S/3/0000000000000000000000000011111111112/S+deck/201/gather/ptr/skip0/plain/reuse",
+   "e1_depth": 26,
+   "score": 31,
+   "total": 918,
+   "per_message": [
+    26,
+    26,
+    0,
+    8,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "seed": 1598675711,
+   "variant": "L26/last/L|D|S/3/0000000000000000000000000011111111112/S+deck/201/gather/ptr/skip0/R2/reuse",
+   "e1_depth": 26,
+   "score": 31,
+   "total": 918,
+   "per_message": [
+    26,
+    26,
+    0,
+    8,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "seed": 1602521748,
+   "variant": "L26/after-letters/LS|D/2/0000000000000000000000000001111111111/deck+S/10/scatter/ptr/skip1/plain/fresh",
+   "e1_depth": 28,
+   "score": 31,
+   "total": 918,
+   "per_message": [
+    28,
+    26,
+    24,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "seed": 1602521748,
+   "variant": "L26/after-letters/LS|D/2/0000000000000000000000000001111111111/deck+S/10/scatter/ptr/skip1/R2/fresh",
+   "e1_depth": 28,
+   "score": 31,
+   "total": 918,
+   "per_message": [
+    28,
+    26,
+    24,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "seed": 1602521748,
+   "variant": "L26/first/L|DS/2/0111111111111111111111111110000000000/deck+S/01/scatter/ptr/skip1/plain/fresh",
+   "e1_depth": 28,
+   "score": 31,
+   "total": 918,
+   "per_message": [
+    28,
+    26,
+    24,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "seed": 1602521748,
+   "variant": "L26/first/L|DS/2/0111111111111111111111111110000000000/deck+S/01/scatter/ptr/skip1/R2/fresh",
+   "e1_depth": 28,
+   "score": 31,
+   "total": 918,
+   "per_message": [
+    28,
+    26,
+    24,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "seed": 1602521748,
+   "variant": "L26/first/L|D|S/3/0111111111111111111111111112222222222/deck+S/210/scatter/ptr/skip1/plain/fresh",
+   "e1_depth": 28,
+   "score": 31,
+   "total": 918,
+   "per_message": [
+    28,
+    26,
+    24,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "seed": 1602521748,
+   "variant": "L26/first/L|D|S/3/0111111111111111111111111112222222222/deck+S/210/scatter/ptr/skip1/R2/fresh",
+   "e1_depth": 28,
+   "score": 31,
+   "total": 918,
+   "per_message": [
+    28,
+    26,
+    24,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  },
+  {
+   "seed": 1592748494,
+   "variant": "L26/first/L|D|S/3/0111111111111111111111111112222222222/S+deck/012/scatter/ptr/skip0/plain/fresh",
+   "e1_depth": 26,
+   "score": 30,
+   "total": 918,
+   "per_message": [
+    26,
+    0,
+    0,
+    6,
+    7,
+    7,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "seed": 1592748494,
+   "variant": "L26/first/L|D|S/3/0111111111111111111111111112222222222/S+deck/012/scatter/ptr/skip0/R2/fresh",
+   "e1_depth": 26,
+   "score": 30,
+   "total": 918,
+   "per_message": [
+    26,
+    0,
+    0,
+    6,
+    7,
+    7,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "seed": 1596102724,
+   "variant": "L26/after-letters/L|D|S/3/0000000000000000000000000012222222222/S+deck/210/scatter/ptr/skip1/plain/reuse",
+   "e1_depth": 25,
+   "score": 30,
+   "total": 918,
+   "per_message": [
+    25,
+    27,
+    26,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  }
+ ],
+ "seconds": 11214.0,
+ "e1_depth_hist_total": [
+  38012505604,
+  11453779275,
+  4886454341,
+  2130808213,
+  932670373,
+  410820898,
+  181449782,
+  80077458,
+  35407869,
+  15660495,
+  6914268,
+  3056570,
+  1354755,
+  598713,
+  268402,
+  118819,
+  51680,
+  22752,
+  10081,
+  4515,
+  1977,
+  867,
+  383,
+  145,
+  79,
+  25,
+  47,
+  6,
+  6,
+  0,
+  2
+ ]
+}

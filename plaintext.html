@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plaintext: Noita eye messages</title>
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="style.css?v=66355e6f">
+
+<main>
+<nav><a href="index.html">Research</a><a href="isomorphs.html">Isomorphs</a><a href="ruled-out.html">Exclusions &amp; searches</a><a href="model.html">Model</a><a href="plaintext.html">Plaintext</a><a href="messages.html">Basics &amp; data</a><a href="sources.html">Sources &amp; tools</a></nav>
+
+<h1>Plaintext</h1>
+
+<p>What the copies say about the text, read through <a href="model.html#assumptions">R</a>: a
+repeated passage of ciphertext is a repeated passage of text. Language, alphabet and spacing are
+unknown, and nothing here decides them.</p>
+
+<h2 id="refrain">A phrase repeated inside one message</h2>
+
+<p>E1, W1 and E2 each contain the same passage twice:</p>
+
+<pre><span class="dim">E1 40–48 </span> <b>47</b> 44 <b>48</b> 42 <b>19</b> <b>48</b> 13 <b>47</b> <b>19</b>
+<span class="dim">E1 68–76 </span> <b>71</b> 11 <b>74</b> 56 <b> 4</b> <b>74</b> 19 <b>71</b> <b> 4</b>
+<span class="dim">           A  .  B  .  C  B  .  A  C</span></pre>
+<pre><span class="dim">W1 34–59 </span> <b>26</b> 54 20 14 21 70 <b>47</b> <b>44</b> <b>48</b> 42 <b>19</b> <b>48</b> 13 <b>47</b> <b>19</b> 49 <b>44</b> <b>26</b> 59 77 <b>64</b> 43 79 28 72 <b>64</b>
+<span class="dim">W1 64–89 </span> <b>67</b>  6 33 25 64 81 <b>68</b> <b>46</b> <b>17</b> 36 <b>13</b> <b>17</b> 21 <b>68</b> <b>13</b>  9 <b>46</b> <b>67</b> 57 34 <b>62</b> 82 15 10 73 <b>62</b>
+<span class="dim">           A  .  .  .  .  .  B  C  D  .  E  D  .  B  E  .  C  A  .  .  F  .  .  .  .  F</span></pre>
+<pre><span class="dim">E2 39–62 </span> <b>16</b> 56 19 47 40 80 <b> 6</b> <b>13</b> <b>64</b> 29 <b>49</b> <b>64</b> 63 <b> 6</b> <b>49</b> 31 <b>13</b> <b>16</b> <b>10</b> 45 24 26 77 <b>10</b>
+<span class="dim">E2 74–97 </span> <b>42</b> 37 30 22  0 11 <b>41</b> <b>72</b> <b>57</b> 20 <b>23</b> <b>57</b> 65 <b>41</b> <b>23</b> 18 <b>72</b> <b>42</b> <b> 5</b>  3 26 78  8 <b> 5</b>
+<span class="dim">           A  .  .  .  .  .  B  C  D  .  E  D  .  B  E  .  C  A  F  .  .  .  .  F</span></pre>
+
+<p>The second copy comes 28 cells after the first in E1, 30 in W1 and 35 in E2.</p>
+
+<p>Across messages, W1 30–51 is isomorphic to E2 five cells later, and W1 64–81 to E2 ten cells
+later. So E2 has five more characters than W1 before the phrase and five more between the two
+copies.
+The three messages read as one layout: the 24-cell shared opening, a short part that varies, a
+phrase of about 24 characters, another short part of varying width, the phrase again, a tail.</p>
+
+<p>In running text, how often does a 22-character stretch come back 30 or 35 characters later?
+In the game's own text, 10 to 12 times in each language, all in lists of material and spell
+names. In the English Kalevala, 5 times, in parallel verse lines. In five hermetic and
+alchemical books of 200,000 to 500,000 characters each, 0 to 3 times, in chapter headings and
+contents lists. Lists and filled-in templates have this shape; prose does not.</p>
+
+<h2 id="fields">Short stretches that differ</h2>
+
+<pre><span class="dim">   23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48</span>
+<span class="dim">E1</span> 49  1 <mark>80</mark> <mark>82</mark> <mark>40</mark> <mark>63</mark> 81 21 19  0 <mark>40</mark> <mark>51</mark> <mark>65</mark> <mark>26</mark> 14 21 70 47 44 48 42 19 48 13 47 19
+<span class="dim">W1</span> 49  1 <mark>29</mark> <mark>11</mark> <mark>30</mark> <mark>52</mark> 81 21 19  0 <mark>25</mark> <mark>26</mark> <mark>54</mark> <mark>20</mark> 14 21 70 47 44 48 42 19 48 13 47 19</pre>
+
+<p>E1 and W1 differ at cells 25–28 and 33–36 and agree before, between and after. E4 and E5
+differ at 21–24 and agree again at 25–27. Of the 58 stretches left free by the
+<a href="#sheet">constraint sheet</a>, 13 are exactly four cells long. Under the
+<a href="model.html">class-shuffle model</a>, the simplest way for the output to agree again
+after a difference is that the letters that differed belong to one class. Four-character fields
+of one class look like numbers. That reading is open.</p>
+
+<h2 id="genres">Verse rarely makes messages that open alike</h2>
+
+<p>Each form was laid out in reading order over nine messages of the right lengths and enciphered
+with a random class-shuffle key, 200 times, spaced and unspaced. Three things were counted on the
+ciphertext, and the thresholds were fixed before the run:</p>
+
+<table>
+  <tr><th></th><th>Message pairs sharing an opening of 9+ cells</th><th>Messages repeating
+    their own material</th><th>Isomorphs of 20+ cells</th></tr>
+  <tr><td>The eyes</td><td>9 of 36</td><td>3</td><td>11</td></tr>
+  <tr><td>Asked of a text</td><td>at least 6</td><td>at least 2</td><td>at least 5</td></tr>
+</table>
+
+<table>
+  <tr><th>Text</th><th>Openings</th><th>Self-repeat</th><th>Long isomorphs</th><th>All three</th></tr>
+  <tr><td>Control: three records, each written three times with number fields</td><td>100%</td><td>93–95%</td><td>48–54%</td><td>48–52%</td></tr>
+  <tr><td>Nursery rhymes</td><td>4–10%</td><td>71–88%</td><td>20–24%</td><td>3–6%</td></tr>
+  <tr><td>Kanteletar</td><td>8–12%</td><td>21–31%</td><td>13–20%</td><td>0.5–1%</td></tr>
+  <tr><td>Triolet</td><td>0%</td><td>66–69%</td><td>12–27%</td><td>0%</td></tr>
+  <tr><td>Kyrielle</td><td>0%</td><td>20–60%</td><td>15–24%</td><td>0%</td></tr>
+  <tr><td>Pantoum</td><td>0%</td><td>11–27%</td><td>8–49%</td><td>0%</td></tr>
+  <tr><td>Villanelle</td><td>0%</td><td>11–13%</td><td>44–62%</td><td>0%</td></tr>
+  <tr><td>Rondel</td><td>4–7%</td><td>20–32%</td><td>3–7%</td><td>0%</td></tr>
+  <tr><td>Ballade</td><td>0%</td><td>5%</td><td>0–2%</td><td>0%</td></tr>
+  <tr><td>Psalms</td><td>0–1%</td><td>14–20%</td><td>2–3%</td><td>0%</td></tr>
+  <tr><td>Psalm 136, a litany</td><td>0%</td><td>94–95%</td><td>99–100%</td><td>0%</td></tr>
+  <tr><td>Recipes</td><td>0%</td><td>10–14%</td><td>15–35%</td><td>0%</td></tr>
+  <tr><td>Kalevala</td><td>0%</td><td>6–12%</td><td>28–39%</td><td>0%</td></tr>
+  <tr><td>Counting songs</td><td>0%</td><td>11–100%</td><td>100%</td><td>0%</td></tr>
+</table>
+
+<p>Refrain forms make the phrase repeated inside a message. No form gave enough shared openings
+in more than 12% of trials: that needs the same text written out more than once with small
+changes. Litanies and
+counting songs repeat far more than the eyes do. A form could still be the plaintext if it was
+arranged into versions on purpose. Texts are from Project Gutenberg:
+<a href="https://www.gutenberg.org/ebooks/45736">verse forms</a>,
+<a href="https://www.gutenberg.org/ebooks/10">Psalms</a>,
+<a href="https://www.gutenberg.org/ebooks/10607">nursery rhymes</a>,
+<a href="https://www.gutenberg.org/ebooks/10136">recipes</a>,
+<a href="https://www.gutenberg.org/ebooks/7078">Kanteletar</a>,
+<a href="https://www.gutenberg.org/ebooks/7000">Kalevala</a>.
+<a href="evidence/genre-shape-v1.json">Full results</a>.</p>
+
+<h2 id="sheet">The eyes as a fill-in sheet</h2>
+
+<p>Tie together the cells that must hold the same letter and the 1,027 body cells become fewer
+letters to choose:</p>
+
+<table>
+  <tr><th>Cells tied</th><th>Letters left to choose</th><th>Contradictions</th></tr>
+  <tr><td>Shared openings</td><td>918</td><td>0</td></tr>
+  <tr><td>and the four main repeated passages</td><td>760</td><td>0</td></tr>
+  <tr><td>and repeat-supported cells of the other isomorphs (R)</td><td>727</td><td>0</td></tr>
+  <tr><td>and equal symbols where E1/W1 and E4/E5 differ and then agree</td><td>711</td><td>0</td></tr>
+  <tr><td>and five weaker candidate pairs</td><td>695</td><td>0</td></tr>
+  <tr><td>and every cell of every isomorph (W)</td><td>609</td><td>4</td></tr>
+</table>
+
+<p>The last row contradicts itself. E1 and W1 are each isomorphic to E2 five cells later, so W
+ties E1 33–36 to W1 33–36 through E2 38–41, and those cells hold different symbols. With
+matching decks, which the agreement at 29–32 suggests, different symbols are different letters.
+The four cells hold symbols
+seen nowhere else in either passage. So an isomorph can span a short field where the text
+differs without showing it, and W cannot hold for every cell of every listed pair. W2, E3 and W3 are barely tied at all: runs of 70, 48 and 87 cells
+with no constraint. <a href="evidence/constraint-sheet-v1.json">The sheet</a>.</p>
+
+<h2 id="tested">Texts tested</h2>
+
+<p>A candidate was rejected if it broke the pattern of the ciphertext: different text where the
+messages share an opening, or different letters where an isomorph repeats.</p>
+
+<table>
+  <tr><th>Source</th><th>Candidates</th><th>Survive</th></tr>
+  <tr><td>Stretches of the Kalevala and of game text, Finnish and English, at each opening
+    length</td><td>110,666</td><td>0</td></tr>
+  <tr><td>Game strings that share a 16-character opening, assigned to the three groups of
+    messages</td><td>39,852</td><td>0</td></tr>
+  <tr><td>Two solutions posted in full, with and without spaces</td><td>8</td><td>0</td></tr>
+  <tr><td>Text that first shipped in the same builds as the eyes</td><td>1,884</td><td>0</td></tr>
+  <tr><td>Generated records with word or number fields, in three families</td><td>6,000</td><td>0
+    under the two main class splits</td></tr>
+</table>
+
+<p>The two posted solutions give E1, W1 and E2 different first lines; those messages share their
+first 24 symbols. Of the generated records, 38 pass when every letter may have its own shuffle
+and 3 under a third class split; the solver timed out on all of them. This excludes those strings at those alignments. It
+does not exclude the Kalevala or the game's vocabulary as a source.</p>
+
+<h2 id="size">How much text a check needs</h2>
+
+<p>On small decks of 11 to 23 cards, wrong guesses shorter than about 30–36 symbols still have
+a key that fits; longer ones are refuted. Scaled to 83 cards the crossover is about 220–230
+symbols, or 270–300 if the card just read also moves. That is an extrapolation and good to an
+order of magnitude. The eyes have 1,036 symbols, so there is enough ciphertext in principle; a
+guess covering one message is too short to confirm.</p>
+
+<p>The instant <a href="model.html#checking">closure check</a> is much weaker than a full key
+search. It takes about 0.1 seconds per guess and removes guesses that contradict themselves, and
+a guess that survives still needs a key.</p>
+</main>
+<script src="eyes-bg.js?v=bd0eac51" data-mode="random"></script>

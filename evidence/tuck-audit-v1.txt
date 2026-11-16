@@ -1,0 +1,18 @@
+tuck return time d: min 47 max 47 share d <= 1: 0.0 d <= 3: 0.0
+tuck_shuffle return time d: min 2 max 47 share d <= 1: 0.0 d <= 3: 0.0416
+  histogram of the smallest d: [(2, 108), (3, 100), (4, 119), (5, 92), (6, 108), (7, 125), (8, 109), (9, 117)]
+  40 seeds with the smallest d, fingerprint order: mean repeats at lags 1-10 [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  40 seeds with the smallest d, random order: mean repeats at lags 1-10 [0.0, 19.3, 27.1, 26.9, 32.6, 21.2, 29.3, 23.3, 23.7, 26.9]
+  40 random seeds, fingerprint order: mean repeats at lags 1-10 [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  40 random seeds, random order: mean repeats at lags 1-10 [0.0, 0.0, 2.0, 1.5, 5.0, 2.5, 1.6, 2.1, 6.1, 4.8]
+E1: 56 distinct, smallest repeat lag 3: needs A >= 54
+W1: 56 distinct, smallest repeat lag 3: needs A >= 54
+E2: 61 distinct, smallest repeat lag 3: needs A >= 59
+W2: 61 distinct, smallest repeat lag 2: needs A >= 60
+E3: 67 distinct, smallest repeat lag 2: needs A >= 66
+W3: 65 distinct, smallest repeat lag 2: needs A >= 64
+E4: 61 distinct, smallest repeat lag 4: needs A >= 58
+W4: 68 distinct, smallest repeat lag 4: needs A >= 65
+E5: 63 distinct, smallest repeat lag 4: needs A >= 60
+eyes, lags 1-10 (dedup in key-recipes.md: lags 2-10 = 5 9 26 11 12 12 11 18 11)
+keys 600 union over nine messages exceeds A + d - 1: 0

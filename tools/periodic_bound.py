@@ -5,7 +5,8 @@ from cell 1, the first symbol after cell 0) is encrypted with alphabet number i 
 A letters to at most A symbols. So if some residue class mod p shows more than A distinct symbols, no
 key of period p and no plaintext over A letters can produce the messages.
 
-  python periodic_bound.py            prints, for p = 1..20, the most distinct symbols in one class
+  python periodic_bound.py            prints, for p = 1..40, the most distinct symbols in one class,
+                                      then the periods excluded for a few alphabet sizes
 """
 from eyes import MSGS
 
@@ -21,7 +22,8 @@ def most_in_one_class(p):
 
 
 if __name__ == '__main__':
-    for p in range(1, 21):
-        print(f'period {p:2d}: some position shows {most_in_one_class(p)} different symbols')
-    print('every period 1-10 shows at least', min(most_in_one_class(p) for p in range(1, 11)),
-          'so all are excluded for any alphabet of 58 letters or fewer')
+    most = {p: most_in_one_class(p) for p in range(1, 41)}
+    for p, n in most.items():
+        print(f'period {p:2d}: some position shows {n} different symbols')
+    for letters in (27, 37, 60):
+        print(f'alphabet of {letters} letters or fewer: excluded periods', [p for p, n in most.items() if n > letters])

@@ -2,93 +2,166 @@
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Constraints and searches: Noita eye messages</title>
+<title>Exclusions and searches: Noita eye messages</title>
 <link rel="icon" href="favicon.ico">
 <link rel="stylesheet" href="style.css?v=66355e6f">
 
 <main>
-<nav><a href="index.html">Research</a><a href="isomorphs.html">Isomorphs</a><a href="ruled-out.html">Constraints &amp; searches</a><a href="model.html">Model &amp; checks</a><a href="messages.html">Basics &amp; data</a><a href="sources.html">Sources &amp; tools</a></nav>
+<nav><a href="index.html">Research</a><a href="isomorphs.html">Isomorphs</a><a href="ruled-out.html">Exclusions &amp; searches</a><a href="model.html">Model</a><a href="plaintext.html">Plaintext</a><a href="messages.html">Basics &amp; data</a><a href="sources.html">Sources &amp; tools</a></nav>
 
-<h1>Constraints &amp; searches</h1>
+<h1>Exclusions &amp; searches</h1>
 
-<p>An exclusion applies to a specified mechanism and assumptions, not every cipher with a similar
-name. <a href="model.html#assumptions">R and W</a> distinguish repeat-supported plaintext
-correspondence from whole-passage correspondence. Neither replaces the other model conditions.</p>
+<p>Grouped by what each argument assumes about the plaintext: nothing, R, or W.
+<a href="model.html#assumptions">R</a> says the repeat-supported cells of an isomorph hold equal
+letters; W says every aligned cell does. A is the number of plaintext letters.</p>
 
-<h2>Short contradictions</h2>
+<h2 id="free">From the ciphertext alone</h2>
+
+<p>A symbol comes back two cells later in five places: W2 21, E3 27, and W3 26, 76 and 94.</p>
+
+<pre><span class="dim">   19 20 21 22 23 24</span>
+<span class="dim">W2</span> 61 47 <b>12</b> 21 <b>12</b> 49
+<span class="dim">    .  .  A  .  A  .</span></pre>
+
 <table>
-  <tr><th>Mechanism</th><th>Constraint</th></tr>
-  <tr><td>One fixed substitution shared by all messages</td><td>Equal letters must give equal
-    symbols. The repeat-supported cells in the <a href="isomorphs.html">E1/E2 example</a> do
-    not. Needs R.</td></tr>
-  <tr><td>One fixed shuffle after every letter</td><td>Ten steps would take 68 to both 41 and 26.
-    Needs R, fixed read positions and the same initial deck/phase in every message.
-    <a href="isomorphs.html#one-shuffle">Certificate</a>.</td></tr>
-  <tr><td>Copy maps that must be rotations of one fixed ring</td><td>Rotations commute. Two maps
-    from one E3 passage give 54 in one order and 10 in the other. This excludes that representation,
-    including plain cyclic deck walks. Needs W and the rotation property of the proposed mechanism.
-    <a href="isomorphs.html#commute">Worked example</a>.</td></tr>
-  <tr><td>A repeating substitution key of period 10 or less</td><td>One position in the period
-    shows at least 61 distinct symbols for every period 1–10. A substitution of A plaintext letters
-    has at most A outputs. This excludes those periods for A &lt; 59, the reported bound,
-    if the key restarts with each message. Needs neither R nor W.
-    <a href="tools/periodic_bound.py">Count the symbols</a>.</td></tr>
-  <tr><td>Two published plaintext proposals</td><td>The English and Finnish proposals give E1,
-    W1 and E2 different first lines despite their identical first 24 body symbols. They fail under
-    a shared-start, deterministic, uniquely decodable cipher with the proposed alignment. That
-    conclusion needs this decoding model, not R or W.</td></tr>
+  <tr><th>Mechanism</th><th>Why it fails</th></tr>
+  <tr><td>Tuck, or move-to-bottom: the card just read goes to the bottom and the rest close
+    up</td><td>Reading from the top A positions, the card needs 84 − A more letters to come back
+    into reach, so a repeat two cells apart needs A = 82. For any other choice of read positions,
+    the gaps between repeats still need A ≥ 59.</td></tr>
+  <tr><td>Tuck, then a fixed shuffle of the unread part</td><td>A message whose closest repeat is
+    <i>d</i> cells apart can show at most A + <i>d</i> − 1 different symbols. E3 shows 67 with a
+    repeat two apart, so A ≥ 66. <a href="evidence/tuck-audit-v1.txt">Per-message bounds</a>.</td></tr>
+  <tr><td>Hold-out: the card just read waits in a reserve of <i>h</i> cards</td><td>It cannot
+    reappear for <i>h</i> letters, whatever the key. A repeat two cells apart needs <i>h</i> ≤ 1.
+    This argument does not reach a one-card reserve, or a reserve that returns cards into the
+    middle of the deck.</td></tr>
+  <tr><td>A repeating key, as in Vigenère: a different substitution at each position of a
+    period</td><td>One
+    position of the period shows more than A different symbols (table below). Assumes the key
+    restarts with each message.</td></tr>
+  <tr><td>Disjoint alphabets for up and down triangles</td><td>All 83 symbols occur in both
+    orientations.</td></tr>
 </table>
 
-<h2>Ordering tests have narrower conclusions</h2>
+<table>
+  <tr><th>Plaintext letters</th><th>Periods excluded</th></tr>
+  <tr><td>A ≤ 27</td><td>1–31 and 33</td></tr>
+  <tr><td>A ≤ 37</td><td>1–21</td></tr>
+  <tr><td>A ≤ 60</td><td>1–10</td></tr>
+</table>
 
-<p>No two messages share even their final symbol. Reversing the output therefore does not explain
-the displayed shared openings as shared plaintext openings under a common-start cipher. It does
-not rule out encrypting reversed plaintext or using unrelated plaintext endings.</p>
+<p>If each message may start anywhere in the period, the same count excludes only periods 1–4 at
+A ≤ 27. <a href="tools/periodic_bound.py">Count the symbols</a>.</p>
 
-<p>An exhaustive check of non-identity within-block permutations and phases for block sizes 2–8
-found none preserving both the five opening-divergence positions and the selected offset-one
-isomorphs at the tested nearby shifts. This tests a particular preservation requirement, not
-arbitrary whole-message transposition. <a href="evidence/assumption-p3-v1.txt">Recorded counts</a>.</p>
+<h2 id="r">Needs R</h2>
+<table>
+  <tr><th>Mechanism</th><th>Why it fails</th></tr>
+  <tr><td>One substitution shared by all messages</td><td>Equal letters would give equal symbols.
+    The repeat-supported cells of the <a href="isomorphs.html">E1/E2 example</a> hold different
+    symbols.</td></tr>
+  <tr><td>One shuffle after every letter</td><td>Ten steps would take 68 to both 41 and 26. Also
+    needs fixed read positions and one starting deck for all messages.
+    <a href="isomorphs.html#one-shuffle">Certificate</a>.</td></tr>
+  <tr><td>Steps that depend on which card is where (Solitaire, Chaocipher, RC4-style
+    swaps)</td><td>The same text enciphered from two different states gives two different repeat
+    patterns, so the isomorphs would be coincidences. An RC4-style deck produced no isomorphs in
+    simulation. Lymm's wiki calls the property these ciphers lack
+    <a href="https://github.com/Lymm37/eye-messages/wiki/Perfect-Isomorphism">perfect
+    isomorphism</a>.</td></tr>
+</table>
 
-<h2>A statistical objection is not an impossibility</h2>
+<h2 id="w">Needs W</h2>
+<table>
+  <tr><th>Mechanism</th><th>Why it fails</th></tr>
+  <tr><td>Copy maps that are rotations of one ring (cyclic deck walks, additive
+    autokeys)</td><td>Rotations commute. Two maps from one E3 passage give 54 in one order and 10 in
+    the other. <a href="isomorphs.html#commute">Worked example</a>.</td></tr>
+  <tr><td>Affine shuffles, card <i>x</i> to <i>ax</i> + <i>b</i> mod 83: all that cuts, reversals
+    and faro shuffles can produce</td><td>The three copies that start at E4 68, W4 71 and E5 69
+    allow two affine solutions, and neither extends to any of the other nine copy maps
+    tested.</td></tr>
+  <tr><td>Dihedral shuffles: rotate or reflect the deck</td><td>None of the 4,096 ways to choose
+    rotation or reflection for the twelve maps fits. Eleven of the twelve are not their own
+    inverse.</td></tr>
+</table>
 
-<p>After masking the selected copies, aligned cells in unrelated messages agree 11 times out of
-1,100 comparisons. That is low for same-position substitutions of ordinary letter-frequency text.
-Random homophone selection, on the other hand, must account for the long exactly shared openings.
-These observations disfavor the tested simple homophonic explanations; neither proves that every
-homophonic selection rule is impossible without plaintext assumptions.</p>
+<p id="affine">The affine exclusion is where R and W part. Using only repeat-supported cells, all
+1,681 multiplier pairs tested fit every map: R alone says nothing about affine shuffles.
+allthemalware's <a href="https://github.com/allthemalware/noiteyes">noiteyes</a> reports the
+affine model as inconclusive once the windows are trimmed; the difference from the exclusion
+here is this assumption. The <a href="isomorphs.html#support">link counts</a> show how much of
+the evidence sits on cells that only W uses.</p>
 
-<h2 id="searches">Searched without a hit</h2>
+<p>The header as a key also fails, on a third assumption: all nine messages agree at cells 1 and 2
+after nine different values of cell 0. If the shared openings are shared text, cell 0 does not
+set the deck.</p>
 
-<p>Each key decrypts messages until it encounters a symbol it cannot produce. The score counts
-those prefixes out of 918 (shared openings counted once); it is not a language score. The Lua
-protocol required at least 800 and readable text for a hit. No logged candidate approached that
-threshold. A variant specifies the alphabet layout, letter classes and details such as whether
-the initial deck or the shuffles were generated first.</p>
+<h2 id="order">Reversal and block transposition</h2>
+
+<p>If the output were written backwards, shared plaintext openings would appear as shared endings.
+No two messages share their last symbol. Enciphering reversed plaintext is not tested by this.</p>
+
+<p>A transposition applied after encryption, permuting cells within blocks of 2 to 8, was checked
+exhaustively: 362,843 combinations of permutation and phase. None keeps the five places where the
+shared openings split and the isomorphs at a shift of one.
+<a href="evidence/assumption-p3-v1.txt">Recorded counts</a>.</p>
+
+<h2 id="stats">Unlikely, by simulation</h2>
+
+<p>These rest on comparison with simulated text. They are odds under the stated text model.</p>
 
 <table>
-  <tr><th>Key construction</th><th>Searched</th><th>Best logged score</th></tr>
-  <tr><td>Card tricks: cuts, faros, riffles, pile deals</td><td>576 settings,
-    3.36 billion partial keys</td><td>24</td></tr>
-  <tr><td>MSVC <code>rand</code> seeded with the clock</td><td>5,472 variants × 10.6 million
-    seeds, 15 June–15 October 2020</td><td>36</td></tr>
-  <tr><td>glibc <code>rand</code>, the same way</td><td>5,472 variants × 10.6 million
+  <tr><th>Mechanism</th><th>Observation</th></tr>
+  <tr><td>Messages <i>in depth</i>: the substitution depends only on the position in the
+    message</td><td>Unrelated messages hold the same symbol at the same cell 11 times in 1,100.
+    Letters of any language coincide 3–7% of the time. At 3%, eleven or fewer has probability
+    9 × 10<sup>−6</sup>.</td></tr>
+  <tr><td>Homophonic substitution: several symbols per letter</td><td>A fixed rule for choosing
+    among them puts the messages in depth. A random choice cannot repeat 24 symbols exactly
+    across E1, W1 and E2.</td></tr>
+</table>
+
+<h2 id="searches">Key searches</h2>
+
+<p>The build of 15 July 2020 has no eyes; the 1.0 build of 15 October 2020 has them. The game's
+executable seeds C <code>rand</code> from the clock and shuffles with
+<code>std::random_shuffle</code>. The clock searches below try every second of that window as a
+seed, for each of a few thousand ways to turn shuffles into a class-shuffle key: alphabet order,
+letter classes, whether the deck or the shuffles are generated first. The first runs start a
+month earlier, on 15 June.</p>
+
+<p>A candidate key decrypts each message until it reaches a symbol it cannot produce. The score
+is the total length decrypted, out of 918 (shared openings counted once). A true key scores 918.
+The clock, Lua and card-trick searches each recovered 8 of 8 planted keys first.</p>
+
+<table>
+  <tr><th>Key construction</th><th>Searched</th><th>Best score</th></tr>
+  <tr><td>MSVC <code>rand</code>, clock seed</td><td>5,472 variants × 10.6 million
+    seeds</td><td>36</td></tr>
+  <tr><td>glibc <code>rand</code>, clock seed</td><td>5,472 variants × 10.6 million
     seeds</td><td>34</td></tr>
-  <tr><td>Lua-style recipes: LuaJIT shuffles and character-table layouts with LuaJIT, MSVC or
-    glibc</td><td>183.27 billion variant–seed combinations across ten runs</td><td>44</td></tr>
-  <tr><td>Noita's random generator</td><td>2.2 million keys: world seeds 0 and 1, positions
+  <tr><td>Both again, discarding the first 1 to 8 random numbers</td><td>16 runs, 5,472 variants ×
+    8.0 or 10.6 million seeds each</td><td>30–38</td></tr>
+  <tr><td>Lua-style recipes: LuaJIT shuffles and character-table layouts, with LuaJIT, MSVC or
+    glibc generators</td><td>183 billion keys in ten runs: seeds 0–999,999 and the clock
+    window</td><td>31–44</td></tr>
+  <tr><td>Noita's own random generator</td><td>2.2 million keys: world seeds 0 and 1, positions
     −300 to 300 in both coordinates</td><td>32</td></tr>
   <tr><td>Python <code>random</code></td><td>6 million keys: seeds 0–999,999, six
     variants</td><td>33</td></tr>
+  <tr><td>Card tricks as the class shuffles: cuts, faros, riffles, pile deals</td><td>576
+    settings, 3.36 billion partial keys</td><td>24</td></tr>
 </table>
 
-<p>For the Lua runs, the small range was 0–999,999 and the clock range contained 7,995,900 seconds
-from 15 July to 15 October 2020. Each range was combined only with its specified layouts, not
-every generator/layout combination. <a href="sources.html#search-records">Per-run summaries</a>
-record the ranges, variant counts and logged candidates.</p>
+<p>The seeded searches total 1.07 trillion keys. Card-trick partial keys are a different unit and
+are not in that total. <a href="sources.html#search-records">Per-run records</a> give each run's
+seed range, variant count and best candidates.</p>
 
-<p>These are bounded negative searches. They do not cover arbitrary seeds, other alphabet orders,
-other shuffle routines or different encoder conventions. Partial-key search nodes and complete
-variant–seed combinations are different units and should not be added into one grand total.</p>
+<p>A key whose encoder re-draws on a would-be double still decrypts correctly up to its first
+such double, so most of those encoders are covered too: an estimated 75–80%. Outside
+the searches: other seed sources (a world seed, a fixed constant above a million), other alphabet
+orders, <code>std::shuffle</code> with <code>mt19937</code>, hand-written shuffle loops, and any
+key built by hand.</p>
 </main>
 <script src="eyes-bg.js?v=bd0eac51" data-mode="random"></script>
