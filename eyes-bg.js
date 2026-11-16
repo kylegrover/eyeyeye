@@ -27,12 +27,11 @@
         for (const [dx, dy] of PLUS) px(x0 + 5 + lx + dx, y0 + 3 + ly + dy);
       }
     }
-    c.toBlob(b => {
-      const s = document.body.style;
-      s.backgroundImage = `url(${URL.createObjectURL(b)})`;
-      s.backgroundSize = `${W * SCALE}px ${H * SCALE}px`;
-      s.imageRendering = 'pixelated';
-    });
+    // data: URL, not blob:, so a Content-Security-Policy with img-src 'self' data: allows it
+    const s = document.body.style;
+    s.backgroundImage = `url(${c.toDataURL('image/png')})`;
+    s.backgroundSize = `${W * SCALE}px ${H * SCALE}px`;
+    s.imageRendering = 'pixelated';
   }
 
   window.drawEyes = draw;
