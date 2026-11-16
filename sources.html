@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sources: Noita eye messages</title>
+<link rel="stylesheet" href="style.css">
+
+<main>
+<nav><a href="index.html">Research</a><a href="isomorphs.html">Isomorphs</a><a href="ruled-out.html">Constraints &amp; searches</a><a href="model.html">Model &amp; checks</a><a href="messages.html">Basics &amp; data</a><a href="sources.html">Sources &amp; tools</a></nav>
+
+<h1>Sources &amp; tools</h1>
+
+<p>Community sources establish the background; the scripts and records below let readers check
+specific calculations. A new calculation or explicit certificate is not a claim of first discovery.</p>
+
+<h2>The data</h2>
+
+<p><a href="eyes.json">eyes.json</a> holds the nine messages as raw eye directions and as symbols.
+They were decoded from the constants in the game's executable that place the eyes, and agree on
+all 1,036 symbols with the community transcription by RotBC and ToboterXP; allthemalware reached
+the same result independently from screenshots. The
+<a href="https://noita.wiki.gg/wiki/Eye_Messages">Noita wiki page</a> has the in-game
+locations and pictures of the walls.</p>
+
+<h2>Scripts</h2>
+
+<p>Download <a href="eyes.json">eyes.json</a> and the five scripts into one folder. They use only
+the Python 3 standard library. <code>one_shuffle.py</code> and <code>commute.py</code> import
+<code>isomorph.py</code>; all four checks import <code>eyes.py</code>. For example, run
+<code>uv run python one_shuffle.py</code>. Passing a script checks its stated calculation, not
+whether its plaintext assumptions are true.</p>
+
+<table>
+  <tr><td><a href="tools/eyes.py">eyes.py</a></td><td>loads the messages; run it to rebuild every
+    symbol from the eye rows</td></tr>
+  <tr><td><a href="tools/isomorph.py">isomorph.py</a></td><td>checks an isomorph and prints its copy
+    map, marking which arrows need only R</td></tr>
+  <tr><td><a href="tools/one_shuffle.py">one_shuffle.py</a></td><td>the three-isomorph argument that
+    K ≥ 2 (<a href="isomorphs.html#one-shuffle">isomorphs</a>)</td></tr>
+  <tr><td><a href="tools/commute.py">commute.py</a></td><td>two copy maps that do not commute
+    (<a href="isomorphs.html#commute">isomorphs</a>)</td></tr>
+  <tr><td><a href="tools/periodic_bound.py">periodic_bound.py</a></td><td>the counting bound for
+    repeating keys (<a href="ruled-out.html">ruled out</a>)</td></tr>
+</table>
+
+<h2 id="records">Calculation records</h2>
+
+<ul>
+  <li><a href="evidence/arrow-ledger-v1.json">Copy-link ledger</a>: aligned cells, repeat support,
+    connected sets and single-shuffle certificates.</li>
+  <li><a href="evidence/assumption-p5-v1.txt">No-doubles experiment</a>: 400 random keys, then
+    200 conditioned and 200 designed keys. The setup is described on the
+    <a href="model.html#doubles">model page</a>; it used local game text, which is not redistributed.</li>
+  <li><a href="evidence/assumption-p3-v1.txt">Block-permutation counts</a>: the exhaustive
+    block-size 2–8 check, not arbitrary transposition.</li>
+  <li><a href="evidence/fill-calibration-v1.json">Earlier fill calibration</a>: 200 fills per
+    configuration, using pairwise checks. This is distinct from the later 120-fill closure
+    diagnostic described on the <a href="model.html#checking">model page</a>.</li>
+</ul>
+
+<h2 id="search-records">Lua-recipe search records</h2>
+
+<p>Each file contains the actual seed range, variant count, logging cutoff and best logged
+candidates. Candidate scores measure compatible prefix lengths, not readable plaintext.</p>
+<ul>
+  <li><a href="evidence/lua/luajit-pick-d12-small.json">LuaJIT pick, D12 layouts, small seeds</a></li>
+  <li><a href="evidence/lua/luajit-fy-d12-small.json">LuaJIT Fisher–Yates, D12 layouts, small seeds</a></li>
+  <li><a href="evidence/lua/luajit-pick-table-small.json">LuaJIT pick, table layouts, small seeds</a></li>
+  <li><a href="evidence/lua/luajit-fy-table-small.json">LuaJIT Fisher–Yates, table layouts, small seeds</a></li>
+  <li><a href="evidence/lua/luajit-pick-table-window.json">LuaJIT pick, table layouts, clock seeds</a></li>
+  <li><a href="evidence/lua/luajit-pick-d12-window.json">LuaJIT pick, D12 layouts, clock seeds</a></li>
+  <li><a href="evidence/lua/luajit-fy-table-window.json">LuaJIT Fisher–Yates, table layouts, clock seeds</a></li>
+  <li><a href="evidence/lua/luajit-fy-d12-window.json">LuaJIT Fisher–Yates, D12 layouts, clock seeds</a></li>
+  <li><a href="evidence/lua/msvc-table-window.json">MSVC, table layouts, clock seeds</a></li>
+  <li><a href="evidence/lua/glibc-table-window.json">glibc, table layouts, clock seeds</a></li>
+</ul>
+
+<h2>Community work</h2>
+
+<p>The eye messages have been worked on for years, mostly on the Noita Discord. What this site
+uses:</p>
+
+<ul>
+  <li>Lymm's <a href="https://github.com/Lymm37/eye-messages">eye-messages</a> repository and
+    <a href="https://github.com/Lymm37/eye-messages/wiki">wiki</a>: the group autokey family,
+    the classification of what isomorphs allow, and pages on
+    <a href="https://github.com/Lymm37/eye-messages/wiki/Message-Starts">shared openings</a> and
+    <a href="https://github.com/Lymm37/eye-messages/wiki/No-Doubles">no doubles</a>.</li>
+  <li>FrobtheBuilder's <a href="https://frobthebuilder.github.io/eye-cipher-field-notes/">Eye
+    Cipher Field Notes</a>: the deck model with a few shuffles shared between kinds of letter.</li>
+  <li>allthemalware's <a href="https://github.com/allthemalware/noiteyes">noiteyes</a>: an
+    independent reading of the messages from the pixels, and independent exclusions of additive
+    ciphers.</li>
+  <li>lamia-zamia's <a href="https://github.com/lamia-zamia/Noita_eyes">Noita_eyes</a>: an attack
+    workbench and an archive of earlier community write-ups.</li>
+  <li>tomster12's <a href="https://github.com/tomster12/eye-inspector">eye-inspector</a>: a viewer
+    for the messages and their isomorphs.</li>
+  <li>Dr Cats, on the Noita Discord: the chain in cell 0 (<a href="messages.html">messages</a>).</li>
+</ul>
+
+<h2>Background</h2>
+
+<ul>
+  <li>The cipher families on the <a href="ruled-out.html">ruled out</a> page:
+    <a href="https://en.wikipedia.org/wiki/Substitution_cipher">substitution</a>,
+    <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher">Vigenère</a>,
+    <a href="https://en.wikipedia.org/wiki/Autokey_cipher">autokey</a>,
+    <a href="https://en.wikipedia.org/wiki/Alberti_cipher">Alberti</a>,
+    <a href="https://en.wikipedia.org/wiki/Rotor_machine">rotor machines</a>,
+    <a href="https://en.wikipedia.org/wiki/Transposition_cipher">transposition</a>.</li>
+  <li>Examples of other card-based ciphers, not endorsements as solutions to the eyes:
+    <a href="https://en.wikipedia.org/wiki/Solitaire_(cipher)">Solitaire</a> and
+    <a href="https://en.wikipedia.org/wiki/Chaocipher">Chaocipher</a>.</li>
+</ul>
+</main>
+<script src="eyes-bg.js" data-mode="random"></script>

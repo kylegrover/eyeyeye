@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noita eye messages: research</title>
+<link rel="stylesheet" href="style.css">
+
+<main>
+<nav><a href="index.html">Research</a><a href="isomorphs.html">Isomorphs</a><a href="ruled-out.html">Constraints &amp; searches</a><a href="model.html">Model &amp; checks</a><a href="messages.html">Basics &amp; data</a><a href="sources.html">Sources &amp; tools</a></nav>
+
+<h1>Noita eye messages</h1>
+
+<p>Worked constraints, key searches and plaintext checks for the unsolved eye messages. The
+community's isomorph and deck-cipher work is the starting point; the results below separate what
+can be proved from what depends on a model or a simulation. For the glyph reading, shared openings
+and full transcription, see <a href="messages.html">Basics &amp; data</a>.</p>
+
+<h2>One shuffle gives two answers</h2>
+
+<table>
+  <tr><th>Copies</th><th>Shift</th><th>Repeated symbol maps to</th></tr>
+  <tr><td>W1 → E2</td><td>10</td><td>68 → 41</td></tr>
+  <tr><td>E4 → E5</td><td>1</td><td>68 → 30</td></tr>
+  <tr><td>E3 → E4</td><td>9</td><td>30 → 26</td></tr>
+</table>
+
+<p>One fixed shuffle after every letter would take 68 to 41 after ten steps, but also to 26
+via the other two copies. Each mapping occurs at two cells. The contradiction needs equal
+plaintext at those cells and a shared starting deck across messages—not equal text throughout
+every passage. <a href="isomorphs.html#one-shuffle">The cells and the certificate</a></p>
+
+<h2>Repeat-supported links do not connect the whole deck</h2>
+
+<table>
+  <tr><th>Copy-map links used</th><th>Largest connected set</th></tr>
+  <tr><td>All aligned cells</td><td>82 symbols</td></tr>
+  <tr><td>Only mappings seen at least twice, omitting the weak W1/E3 pair</td><td>28 symbols</td></tr>
+</table>
+
+<p>The stronger interpretation of an isomorph does real work. It supplies the links used in the
+noncommuting-map argument and the six-symbol lower bound at the E4/E5 break. The single-shuffle
+contradiction survives without it. Symbol 27 touches no copy-map link in the catalogue.
+<a href="isomorphs.html#support">Which conclusions need which cells</a></p>
+
+<h2>Zero doubles is not twelve independent surprises</h2>
+
+<p>The bodies contain 1,018 adjacent pairs and no equal neighbours. In a fixed read-then-shuffle
+key, a particular pair of plaintext letters either always produces a double or never does.
+Repeated occurrences of that pair are not independent trials.</p>
+
+<p>In a 400-key simulation using English game-text samples, 27 plaintext symbols and three shuffle
+classes, 4.8% of keys and text samples produced no doubles. That does not establish the probability
+for the unknown plaintext, but it removes the argument that an ordinary random key would need
+extraordinary luck. <a href="model.html#doubles">The condition and the experiment</a></p>
+
+<h2>About 183 billion Lua-recipe candidates, no hit</h2>
+
+<p>Ten runs covered LuaJIT shuffle recipes and character-table layouts with LuaJIT, MSVC and glibc
+random generators. The best logged candidate reached 44 of 918 scored cells. This rules out the
+searched configurations under their test, not seeded shuffles in general.
+<a href="ruled-out.html#searches">Ranges, scoring and other searches</a></p>
+
+<h2>A guess passing the checks is not a solution</h2>
+
+<p>In one exploratory test, 3 of 120 deliberately wrong full-length fills passed the folding
+closure check when each letter could have its own shuffle. None passed with either of the two
+tested class splits. Those are rejection rates for constructed fills, not probabilities that a
+surviving guess is right. A claimed solution needs a key and a reproducible encryption, not just
+text that fits the repeats. <a href="model.html#checking">What the checker establishes</a></p>
+
+<p>The shuffles, alphabet and plaintext remain unknown. The <a href="model.html">class-shuffle
+model</a> explains several patterns without a recovered key; it is not the only possible mechanism.
+Community references and the small reproducible checks are on <a href="sources.html">Sources &amp;
+tools</a>.</p>
+</main>
+<script src="eyes-bg.js" data-mode="random"></script>

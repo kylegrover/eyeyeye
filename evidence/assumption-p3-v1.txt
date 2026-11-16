@@ -1,0 +1,7 @@
+b=2: non-identity (sigma, phase) 2; keep the five opening divergences 0; also keep both offset-1 copies 0
+b=3: non-identity (sigma, phase) 15; keep the five opening divergences 2; also keep both offset-1 copies 0
+b=4: non-identity (sigma, phase) 92; keep the five opening divergences 3; also keep both offset-1 copies 0
+b=5: non-identity (sigma, phase) 595; keep the five opening divergences 7; also keep both offset-1 copies 0
+b=6: non-identity (sigma, phase) 4314; keep the five opening divergences 14; also keep both offset-1 copies 0
+b=7: non-identity (sigma, phase) 35273; keep the five opening divergences 31; also keep both offset-1 copies 0
+b=8: non-identity (sigma, phase) 322552; keep the five opening divergences 128; also keep both offset-1 copies 0

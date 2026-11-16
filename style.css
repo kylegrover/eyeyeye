@@ -1,0 +1,22 @@
+/* page: paper tones; eyes-bg.js tiles random eye glyphs in --eye-ink behind the content panel */
+:root { --eye-ink: #e8e5dc; }
+body { margin: 0; padding: 2rem 1rem; background-color: #f6f4ee; font: 16px/1.5 system-ui, sans-serif; color: #2b2a26; }
+main { max-width: 44rem; margin: 0 auto; padding: .5rem 1.5rem 1.5rem; background: rgb(255 253 248 / .9); border: 1px solid #e2ddd0; }
+a { color: #3b5670; }
+nav { padding: .5rem 0; border-bottom: 1px solid #e2ddd0; }
+nav a { margin-right: 1rem; }
+h1, h2 { line-height: 1.2; }
+table { border-collapse: collapse; width: 100%; }
+th, td { text-align: left; padding: .25rem .5rem; border-bottom: 1px solid #e2ddd0; vertical-align: top; }
+code, pre { font: 13px ui-monospace, Consolas, monospace; }
+pre { overflow-x: auto; }
+/* exhibits: the only colour on the site, and each colour means one thing */
+pre b { font-weight: normal; color: #b3400a; }   /* a symbol that repeats inside its row */
+pre mark { background: #fde68a; color: inherit; } /* a cell where the rows differ */
+pre .dim { color: #999; }                         /* labels, cell numbers, pattern row */
+.todo { border-left: 3px solid #c00; padding-left: .5rem; color: #900; } /* draft only; build counts them */
+.glyphs { margin: 1rem 0; overflow-x: auto; }
+.glyphs svg { image-rendering: pixelated; shape-rendering: crispEdges; }
+.glyphs path { fill: #2b2a26; }
+.glyphs text { font: 5px ui-monospace, Consolas, monospace; fill: #b3400a; text-anchor: middle; }
+.formal { background: #faf8f2; border-left: 3px solid #e2ddd0; padding: .5rem .75rem; }

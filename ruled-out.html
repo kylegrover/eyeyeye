@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Constraints and searches: Noita eye messages</title>
+<link rel="stylesheet" href="style.css">
+
+<main>
+<nav><a href="index.html">Research</a><a href="isomorphs.html">Isomorphs</a><a href="ruled-out.html">Constraints &amp; searches</a><a href="model.html">Model &amp; checks</a><a href="messages.html">Basics &amp; data</a><a href="sources.html">Sources &amp; tools</a></nav>
+
+<h1>Constraints &amp; searches</h1>
+
+<p>An exclusion applies to a specified mechanism and assumptions, not every cipher with a similar
+name. <a href="model.html#assumptions">R and W</a> distinguish repeat-supported plaintext
+correspondence from whole-passage correspondence. Neither replaces the other model conditions.</p>
+
+<h2>Short contradictions</h2>
+<table>
+  <tr><th>Mechanism</th><th>Constraint</th></tr>
+  <tr><td>One fixed substitution shared by all messages</td><td>Equal letters must give equal
+    symbols. The repeat-supported cells in the <a href="isomorphs.html">E1/E2 example</a> do
+    not. Needs R.</td></tr>
+  <tr><td>One fixed shuffle after every letter</td><td>Ten steps would take 68 to both 41 and 26.
+    Needs R, fixed read positions and the same initial deck/phase in every message.
+    <a href="isomorphs.html#one-shuffle">Certificate</a>.</td></tr>
+  <tr><td>Copy maps that must be rotations of one fixed ring</td><td>Rotations commute. Two maps
+    from one E3 passage give 54 in one order and 10 in the other. This excludes that representation,
+    including plain cyclic deck walks. Needs W and the rotation property of the proposed mechanism.
+    <a href="isomorphs.html#commute">Worked example</a>.</td></tr>
+  <tr><td>A repeating substitution key of period 10 or less</td><td>One position in the period
+    shows at least 61 distinct symbols for every period 1–10. A substitution of A plaintext letters
+    has at most A outputs. This excludes those periods for A &lt; 59, the reported bound,
+    if the key restarts with each message. Needs neither R nor W.
+    <a href="tools/periodic_bound.py">Count the symbols</a>.</td></tr>
+  <tr><td>Two published plaintext proposals</td><td>The English and Finnish proposals give E1,
+    W1 and E2 different first lines despite their identical first 24 body symbols. They fail under
+    a shared-start, deterministic, uniquely decodable cipher with the proposed alignment. That
+    conclusion needs this decoding model, not R or W.</td></tr>
+</table>
+
+<h2>Ordering tests have narrower conclusions</h2>
+
+<p>No two messages share even their final symbol. Reversing the output therefore does not explain
+the displayed shared openings as shared plaintext openings under a common-start cipher. It does
+not rule out encrypting reversed plaintext or using unrelated plaintext endings.</p>
+
+<p>An exhaustive check of non-identity within-block permutations and phases for block sizes 2–8
+found none preserving both the five opening-divergence positions and the selected offset-one
+isomorphs at the tested nearby shifts. This tests a particular preservation requirement, not
+arbitrary whole-message transposition. <a href="evidence/assumption-p3-v1.txt">Recorded counts</a>.</p>
+
+<h2>A statistical objection is not an impossibility</h2>
+
+<p>After masking the selected copies, aligned cells in unrelated messages agree 11 times out of
+1,100 comparisons. That is low for same-position substitutions of ordinary letter-frequency text.
+Random homophone selection, on the other hand, must account for the long exactly shared openings.
+These observations disfavor the tested simple homophonic explanations; neither proves that every
+homophonic selection rule is impossible without plaintext assumptions.</p>
+
+<h2 id="searches">Searched without a hit</h2>
+
+<p>Each key decrypts messages until it encounters a symbol it cannot produce. The score counts
+those prefixes out of 918 (shared openings counted once); it is not a language score. The Lua
+protocol required at least 800 and readable text for a hit. No logged candidate approached that
+threshold. A variant specifies the alphabet layout, letter classes and details such as whether
+the initial deck or the shuffles were generated first.</p>
+
+<table>
+  <tr><th>Key construction</th><th>Searched</th><th>Best logged score</th></tr>
+  <tr><td>Card tricks: cuts, faros, riffles, pile deals</td><td>576 settings,
+    3.36 billion partial keys</td><td>24</td></tr>
+  <tr><td>MSVC <code>rand</code> seeded with the clock</td><td>5,472 variants × 10.6 million
+    seeds, 15 June–15 October 2020</td><td>36</td></tr>
+  <tr><td>glibc <code>rand</code>, the same way</td><td>5,472 variants × 10.6 million
+    seeds</td><td>34</td></tr>
+  <tr><td>Lua-style recipes: LuaJIT shuffles and character-table layouts with LuaJIT, MSVC or
+    glibc</td><td>183.27 billion variant–seed combinations across ten runs</td><td>44</td></tr>
+  <tr><td>Noita's random generator</td><td>2.2 million keys: world seeds 0 and 1, positions
+    −300 to 300 in both coordinates</td><td>32</td></tr>
+  <tr><td>Python <code>random</code></td><td>6 million keys: seeds 0–999,999, six
+    variants</td><td>33</td></tr>
+</table>
+
+<p>For the Lua runs, the small range was 0–999,999 and the clock range contained 7,995,900 seconds
+from 15 July to 15 October 2020. Each range was combined only with its specified layouts, not
+every generator/layout combination. <a href="sources.html#search-records">Per-run summaries</a>
+record the ranges, variant counts and logged candidates.</p>
+
+<p>These are bounded negative searches. They do not cover arbitrary seeds, other alphabet orders,
+other shuffle routines or different encoder conventions. Partial-key search nodes and complete
+variant–seed combinations are different units and should not be added into one grand total.</p>
+</main>
+<script src="eyes-bg.js" data-mode="random"></script>

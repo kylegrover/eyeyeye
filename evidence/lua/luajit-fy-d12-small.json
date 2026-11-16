@@ -1,0 +1,156 @@
+{
+ "rng": "luajit-fy",
+ "offset": 0,
+ "layouts": "d12",
+ "window": [
+  0,
+  1000000
+ ],
+ "variants": 5472,
+ "seeds": 1000000,
+ "log_depth": 25,
+ "hits_logged": 6,
+ "best": [
+  {
+   "seed": 210176,
+   "variant": "L26/last/L|D|S/3/0000000000000000000000000011111111112/deck+S/021/scatter/rtp/skip1/plain/fresh",
+   "e1_depth": 29,
+   "score": 31,
+   "total": 918,
+   "per_message": [
+    29,
+    25,
+    25,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "seed": 210176,
+   "variant": "L26/last/L|D|S/3/0000000000000000000000000011111111112/deck+S/021/scatter/rtp/skip1/R2/fresh",
+   "e1_depth": 29,
+   "score": 31,
+   "total": 918,
+   "per_message": [
+    29,
+    25,
+    25,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "seed": 603949,
+   "variant": "L26/after-letters/L|D|S/3/0000000000000000000000000012222222222/S+deck/201/scatter/rtp/skip0/plain/fresh",
+   "e1_depth": 25,
+   "score": 24,
+   "total": 918,
+   "per_message": [
+    25,
+    25,
+    0,
+    0,
+    3,
+    2,
+    3,
+    3,
+    0
+   ]
+  },
+  {
+   "seed": 603949,
+   "variant": "L26/after-letters/L|D|S/3/0000000000000000000000000012222222222/S+deck/201/scatter/rtp/skip0/R2/fresh",
+   "e1_depth": 25,
+   "score": 24,
+   "total": 918,
+   "per_message": [
+    25,
+    25,
+    0,
+    0,
+    3,
+    2,
+    3,
+    3,
+    0
+   ]
+  },
+  {
+   "seed": 603949,
+   "variant": "L26/first/L|D|S/3/0111111111111111111111111112222222222/S+deck/021/scatter/rtp/skip0/plain/fresh",
+   "e1_depth": 25,
+   "score": 24,
+   "total": 918,
+   "per_message": [
+    25,
+    25,
+    0,
+    0,
+    3,
+    2,
+    3,
+    3,
+    0
+   ]
+  },
+  {
+   "seed": 603949,
+   "variant": "L26/first/L|D|S/3/0111111111111111111111111112222222222/S+deck/021/scatter/rtp/skip0/R2/fresh",
+   "e1_depth": 25,
+   "score": 24,
+   "total": 918,
+   "per_message": [
+    25,
+    25,
+    0,
+    0,
+    3,
+    2,
+    3,
+    3,
+    0
+   ]
+  }
+ ],
+ "seconds": 1121.3,
+ "e1_depth_hist_total": [
+  3576882008,
+  1077808301,
+  459958415,
+  200516333,
+  87695399,
+  38614931,
+  17034504,
+  7525068,
+  3324686,
+  1477893,
+  650107,
+  285768,
+  126046,
+  55769,
+  24756,
+  11492,
+  5061,
+  1918,
+  828,
+  385,
+  188,
+  70,
+  31,
+  26,
+  11,
+  4,
+  0,
+  0,
+  0,
+  2
+ ]
+}

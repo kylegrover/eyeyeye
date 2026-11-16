@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A class-shuffle model: Noita eye messages</title>
+<link rel="stylesheet" href="style.css">
+
+<main>
+<nav><a href="index.html">Research</a><a href="isomorphs.html">Isomorphs</a><a href="ruled-out.html">Constraints &amp; searches</a><a href="model.html">Model &amp; checks</a><a href="messages.html">Basics &amp; data</a><a href="sources.html">Sources &amp; tools</a></nav>
+
+<h1>A class-shuffle model</h1>
+
+<p>A candidate mechanism, not a recovered cipher. It can produce shared openings, isomorphs and
+changes followed by matching output. No key has been found that reproduces all nine messages.</p>
+
+<h2>Read a position, then shuffle</h2>
+
+<ol>
+  <li>Start each message with the same deck of 83 cards, numbered 0 to 82.</li>
+  <li>Give every plaintext letter a different, fixed position in the deck.</li>
+  <li>Output the card at the letter's position.</li>
+  <li>Apply a fixed shuffle chosen by the letter's class. Letters in the same class use the same
+    shuffle.</li>
+</ol>
+
+<p>This is a shared-shuffle version of extended group autokey. See
+<a href="https://github.com/Lymm37/eye-messages/wiki/Extended-Group-Autokey-(XGAK)">Lymm's
+formalization</a> and <a href="https://frobthebuilder.github.io/eye-cipher-field-notes/">FrobtheBuilder's
+field notes</a>. The key changes with the plaintext, as in an <i>autokey</i> cipher; here the
+changes are permutations. The working variant has no extra movement of the card just read.</p>
+
+<h2 id="assumptions">What is assumed</h2>
+
+<p>Two levels of plaintext correspondence are used on these pages:</p>
+<ul>
+  <li>R: at repeat-supported positions of a selected isomorph, corresponding cells in the two
+    passages hold the same plaintext letter. It is a claim across copies, not just within each row.</li>
+  <li>W: corresponding cells throughout the selected span hold the same plaintext, including
+    positions whose symbols occur only once there.</li>
+</ul>
+<p>W implies R on that span. These are hypotheses about selected passages, not a rule that every
+coincidental isomorph must be shared text. Other conditions still matter: the model here uses one
+shared initial deck, fixed read positions, and the same letter-to-shuffle rule in every message.
+Cell 0 is left outside encryption.</p>
+
+<h2 id="notation">In notation</h2>
+
+<pre class="formal">
+D<sub>t</sub>          the deck before letter t, a bijection from positions to cards
+r(a)        the position letter a reads; different letters, different positions
+κ(a)        the class of letter a, one of 1 … K
+P<sub>1</sub> … P<sub>K</sub>     the shuffles, fixed permutations of 83 positions
+
+c<sub>t</sub> = D<sub>t</sub>[ r(a<sub>t</sub>) ]                  read
+D<sub>t+1</sub>[i] = D<sub>t</sub>[ P<sub>κ(a<sub>t</sub>)</sub>(i) ]          shuffle
+</pre>
+
+<p>The key is (D<sub>0</sub>, r, κ, P<sub>1</sub> … P<sub>K</sub>). With one shuffle, put
+Q = D<sub>0</sub> P<sub>1</sub> D<sub>0</sub><sup>−1</sup>: this is the shuffle expressed on
+symbols rather than positions. Equal letters at a shift of <i>d</i> then give a symbol map
+Q<sup>d</sup>, independent of the start of the passage. The
+<a href="isomorphs.html#one-shuffle">three-copy certificate</a> contradicts K = 1 under R.</p>
+
+<h2>Matching output need not mean matching states</h2>
+
+<pre><span class="dim">   23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48</span>
+<span class="dim">E1</span> 49  1 <mark>80</mark> <mark>82</mark> <mark>40</mark> <mark>63</mark> 81 21 19  0 <mark>40</mark> <mark>51</mark> <mark>65</mark> <mark>26</mark> 14 21 70 47 44 48 42 19 48 13 47 19
+<span class="dim">W1</span> 49  1 <mark>29</mark> <mark>11</mark> <mark>30</mark> <mark>52</mark> 81 21 19  0 <mark>25</mark> <mark>26</mark> <mark>54</mark> <mark>20</mark> 14 21 70 47 44 48 42 19 48 13 47 19</pre>
+
+<p>E1 and W1 differ at cells 25–28, match at 29–32, differ at 33–36, then match again. In this
+model, replacing a letter with another of the same class changes its output but leaves the next
+deck unchanged. That is one explanation. Equal outputs alone do not establish equal deck states:
+different states can agree at the positions subsequently read, and different updates can cancel.</p>
+
+<h2 id="doubles">A double is a property of a letter pair</h2>
+
+<pre class="formal">
+a followed by b produces equal symbols ⇔ P<sub>κ(a)</sub>(r(b)) = r(a)
+</pre>
+
+<p>The current deck cancels out of this condition. For a fixed key, every occurrence of the same
+letter pair has the same outcome. Treating all 1,018 observed adjacencies as independent 1/83
+trials therefore overstates the evidence from zero doubles.</p>
+
+<p>A simulation of 400 random keys and English game-text samples at the nine body lengths used
+27 plaintext symbols and three randomly assigned classes. It produced a mean of 11.4 doubles,
+but zero doubles in 4.8% of trials. This is a model-dependent comparison, not a p-value for every
+possible plaintext. <a href="evidence/assumption-p5-v1.txt">Recorded output</a>.</p>
+
+<p>A key deliberately preventing doubles for every possible plaintext is a stronger condition
+than these messages require. In particular, the absence of doubles here does not by itself prove
+that the plaintext alphabet has fewer than 83 letters.</p>
+
+<h2>What remains open</h2>
+
+<p>Two to four shuffle classes are the current working range, not a proved upper bound. Unrelated
+shuffles and small changes to a common base both remain candidates. If whole passages correspond,
+the <a href="isomorphs.html#break">E4/E5 break</a> requires a relative change moving at least six
+symbols; it does not identify the individual shuffles.</p>
+
+<p>Some variants also move the card just read—a “lift”—before or after the class shuffle. The
+checks below concern the simpler no-lift model and do not exclude those variants. The alphabet,
+spacing, letter classes and reason for 83 cards are still unknown.</p>
+
+<h2 id="checking">Rejecting a guess is easier than verifying one</h2>
+
+<p>A <i>crib</i> is a guessed stretch of plaintext. Folding closure tracks the possible positions
+of each card through the guessed text: equal read letters must use the same position, and each
+shuffle must be a one-to-one map. A contradiction rejects that guess under the specified model.
+No contradiction does not guarantee that a complete 83-card key exists.</p>
+
+<table>
+  <tr><th>Full-length wrong fills</th><th>Passed closure</th></tr>
+  <tr><td>One shuffle allowed per letter</td><td>3 / 120</td></tr>
+  <tr><td>Vowel / consonant / digit classes</td><td>0 / 120</td></tr>
+  <tr><td>Letter / digit / space classes</td><td>0 / 120</td></tr>
+</table>
+
+<p>This exploratory diagnostic used fills respecting the proposed shared-text constraints,
+drawn from English game text, common English and common Finnish; half used digit fields. It tests
+those constructed guesses, not all possible wrong plaintexts. The broader
+<a href="evidence/fill-calibration-v1.json">fill-calibration results</a> use the earlier pairwise
+checks and show substantial variation between text sources.</p>
+
+<p>For a reproducible solution, supply the alphabet, initial deck, read positions, class map and
+shuffles, then encrypt the proposed text back to all nine messages. A solver timeout is neither
+confirmation nor rejection. Crib checking is one route; recovering a key recipe or other external
+information could identify the text without starting from a crib.</p>
+
+<h2 id="terms">Terms</h2>
+<table>
+  <tr><td>autokey</td><td>a cipher whose changing key depends on the plaintext or ciphertext</td></tr>
+  <tr><td>commute</td><td>two maps give the same result in either order</td></tr>
+  <tr><td>crib</td><td>a guessed piece of plaintext used to test or recover a key</td></tr>
+  <tr><td>in depth</td><td>messages aligned under the same substitution state</td></tr>
+  <tr><td>isomorph</td><td>two stretches with the same pattern of repeated symbols</td></tr>
+  <tr><td>permutation</td><td>a one-to-one rearrangement; a shuffle here</td></tr>
+  <tr><td>shift</td><td>the difference between the starting cell numbers of two copies</td></tr>
+</table>
+</main>
+<script src="eyes-bg.js" data-mode="random"></script>

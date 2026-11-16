@@ -1,0 +1,4 @@
+real copy-masked: lag-2 0.0044, lag-3 0.0089; 1/83 = 0.0120
+random     : mean doubles  11.4, P(0) 0.048; lag-2 mean 0.0123, P(<= real) 0.128; lag-3 mean 0.0123, P(<= real) 0.287
+conditioned: mean doubles   0.0, P(0) 1.000; lag-2 mean 0.0120, P(<= real) 0.140; lag-3 mean 0.0120, P(<= real) 0.295
+designed   : mean doubles   0.0, P(0) 1.000; lag-2 mean 0.0138, P(<= real) 0.075; lag-3 mean 0.0120, P(<= real) 0.330
