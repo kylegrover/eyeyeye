@@ -1,0 +1,249 @@
+{
+ "eyes": {
+  "O9": 9,
+  "SELF": 3,
+  "S": 32,
+  "S20": 11
+ },
+ "trials": 200,
+ "genres": {
+  "control-eyes-template [unspaced]": {
+   "trials": 200,
+   "A_max": 30,
+   "median": {
+    "O9": 10,
+    "SELF": 6,
+    "S": 39,
+    "S20": 5
+   },
+   "P_O9_ge6": 1.0,
+   "P_SELF_ge2": 0.93,
+   "P_S20_ge5": 0.535,
+   "P_joint": 0.52,
+   "P_S_ge64": 0.065,
+   "units": 0,
+   "verdict": "fits"
+  },
+  "control-eyes-template [spaced]": {
+   "trials": 200,
+   "A_max": 31,
+   "median": {
+    "O9": 10,
+    "SELF": 6,
+    "S": 36,
+    "S20": 4
+   },
+   "P_O9_ge6": 1.0,
+   "P_SELF_ge2": 0.95,
+   "P_S20_ge5": 0.48,
+   "P_joint": 0.475,
+   "P_S_ge64": 0.09,
+   "units": 0,
+   "verdict": "fits"
+  },
+  "song-all-star [unspaced]": {
+   "trials": 200,
+   "A_max": 23,
+   "median": {
+    "O9": 4,
+    "SELF": 1,
+    "S": 11,
+    "S20": 7
+   },
+   "P_O9_ge6": 0.345,
+   "P_SELF_ge2": 0.22,
+   "P_S20_ge5": 0.83,
+   "P_joint": 0.015,
+   "P_S_ge64": 0.0,
+   "units": 11,
+   "verdict": "partial"
+  },
+  "song-all-star [spaced]": {
+   "trials": 200,
+   "A_max": 23,
+   "median": {
+    "O9": 4,
+    "SELF": 1,
+    "S": 10,
+    "S20": 5
+   },
+   "P_O9_ge6": 0.095,
+   "P_SELF_ge2": 0.365,
+   "P_S20_ge5": 0.5,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.005,
+   "units": 11,
+   "verdict": "partial"
+  },
+  "song-ievan-polkka [unspaced]": {
+   "trials": 200,
+   "A_max": 19,
+   "median": {
+    "O9": 6,
+    "SELF": 2,
+    "S": 16,
+    "S20": 0
+   },
+   "P_O9_ge6": 1.0,
+   "P_SELF_ge2": 0.865,
+   "P_S20_ge5": 0.155,
+   "P_joint": 0.155,
+   "P_S_ge64": 0.025,
+   "units": 4,
+   "verdict": "fits"
+  },
+  "song-ievan-polkka [spaced]": {
+   "trials": 200,
+   "A_max": 20,
+   "median": {
+    "O9": 6,
+    "SELF": 2,
+    "S": 17,
+    "S20": 4
+   },
+   "P_O9_ge6": 1.0,
+   "P_SELF_ge2": 0.935,
+   "P_S20_ge5": 0.38,
+   "P_joint": 0.38,
+   "P_S_ge64": 0.01,
+   "units": 4,
+   "verdict": "fits"
+  },
+  "song-rickroll [unspaced]": {
+   "trials": 200,
+   "A_max": 23,
+   "median": {
+    "O9": 6,
+    "SELF": 1,
+    "S": 13,
+    "S20": 10
+   },
+   "P_O9_ge6": 0.61,
+   "P_SELF_ge2": 0.17,
+   "P_S20_ge5": 1.0,
+   "P_joint": 0.105,
+   "P_S_ge64": 0.01,
+   "units": 13,
+   "verdict": "fits"
+  },
+  "song-rickroll [spaced]": {
+   "trials": 200,
+   "A_max": 24,
+   "median": {
+    "O9": 4,
+    "SELF": 1,
+    "S": 22,
+    "S20": 10
+   },
+   "P_O9_ge6": 0.245,
+   "P_SELF_ge2": 0.24,
+   "P_S20_ge5": 0.985,
+   "P_joint": 0.05,
+   "P_S_ge64": 0.065,
+   "units": 13,
+   "verdict": "fits"
+  },
+  "song-still-alive [unspaced]": {
+   "trials": 200,
+   "A_max": 24,
+   "median": {
+    "O9": 2,
+    "SELF": 0,
+    "S": 3,
+    "S20": 0
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.095,
+   "P_S20_ge5": 0.0,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 8,
+   "verdict": "does not arise"
+  },
+  "song-still-alive [spaced]": {
+   "trials": 200,
+   "A_max": 25,
+   "median": {
+    "O9": 2,
+    "SELF": 1,
+    "S": 4,
+    "S20": 0
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.255,
+   "P_S20_ge5": 0.0,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 8,
+   "verdict": "does not arise"
+  },
+  "game-emerald-tablets [unspaced]": {
+   "trials": 200,
+   "A_max": 25,
+   "median": {
+    "O9": 0,
+    "SELF": 1,
+    "S": 3,
+    "S20": 0
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.16,
+   "P_S20_ge5": 0.0,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 11,
+   "verdict": "does not arise"
+  },
+  "game-emerald-tablets [spaced]": {
+   "trials": 200,
+   "A_max": 26,
+   "median": {
+    "O9": 0,
+    "SELF": 1,
+    "S": 4,
+    "S20": 0
+   },
+   "P_O9_ge6": 0.0,
+   "P_SELF_ge2": 0.19,
+   "P_S20_ge5": 0.0,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 11,
+   "verdict": "does not arise"
+  },
+  "kalevala-english [unspaced]": {
+   "trials": 200,
+   "A_max": 34,
+   "median": {
+    "O9": 1,
+    "SELF": 0,
+    "S": 4,
+    "S20": 0
+   },
+   "P_O9_ge6": 0.115,
+   "P_SELF_ge2": 0.065,
+   "P_S20_ge5": 0.02,
+   "P_joint": 0.0,
+   "P_S_ge64": 0.0,
+   "units": 1598,
+   "verdict": "partial"
+  },
+  "kalevala-english [spaced]": {
+   "trials": 200,
+   "A_max": 34,
+   "median": {
+    "O9": 1,
+    "SELF": 0,
+    "S": 4,
+    "S20": 0
+   },
+   "P_O9_ge6": 0.105,
+   "P_SELF_ge2": 0.075,
+   "P_S20_ge5": 0.05,
+   "P_joint": 0.005,
+   "P_S_ge64": 0.0,
+   "units": 1598,
+   "verdict": "partial"
+  }
+ }
+}
